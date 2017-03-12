@@ -1,0 +1,338 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+/* Site blocks */
+
+html, body {
+    height:100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+body {
+    font-family: 'Open Sans', Lucida Grande, Arial, sans-serif;
+    color: #999;
+    font-size: 14px;
+    background: white;
+}
+
+body p {
+    margin: 20px 0 25px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', Lucida Grande, Arial, sans-serif;
+    font-weight: 100;
+    line-height: 1em;
+    margin: 0;
+}
+
+/* headings */
+
+h1 {
+    color: black;
+    font-size: 51px;
+}
+
+h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size:30px;
+    color: black;
+}
+
+h4 {
+    font-size:24px;
+}
+
+h5 {
+    font-size:21px;
+}
+
+h6 {
+    font-size:18px;
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0 20px 0;
+    min-width: 1000px;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.btn-primary:hover {
+    background-color: #366da0;
+}
+
+.btn-re-primary {
+    color: #4fadd7;
+    background-color: #ffffff;
+    border: 2px solid #4fadd7;
+}
+
+.btn-re-primary:hover {
+    color: #ffffff;
+    background-color: #55cbf6;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background-color: #cb0000;
+    color: white;
+    padding: 10px 40px 10px 40px;
+}
+
+.btn-danger:hover {
+    background-color: #aa0000;
+    color: white;
+}
+
+.floating-buy {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+
+.text-primary {
+    color: #4fadd7;
+}
+
+.blue {
+    color: #4fadd7;
+}
+
+.bg-primary {
+    background-color: #3ab2db;
+}
+
+.buybutton-center {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+div {
+    display: block;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+}
+
+.margin-no-top {
+    margin-top: 0;
+}
+
+.margin-no-bottom {
+    margin-bottom: 0;
+}
+
+.container {
+    width: 1000px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#wrapper {
+
+}
+
+#header {
+
+}
+
+#header .wrapper {
+    width: 1000px;
+    margin: auto;
+}
+
+#content {
+    background: none;
+}
+
+#content .wrapper {
+    width: 1000px;
+    margin: auto;
+}
+
+#footer {
+    background: none;
+}
+
+#footer .wrapper {
+    width: 1000px;
+    margin: auto;
+}
+
+#links {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#links ul {}
+#links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+}
+
+#links ul li a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#links ul li a:hover {
+    text-decoration: underline;
+}
+
+#links .copyright {
+    color: black;
+}
+
+#links .copyright a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#links .copyright a:hover {
+    text-decoration: underline;
+}
+
+/* pay button */
+.PayButtonText {
+	display:block;
+	font-family:Arial;
+	font-size:40px;
+	color:#000;
+	font-weight:700;
+	width:450px;
+	text-align:center;
+	text-shadow:0 1px 0 rgba(255,255,255,0.5);
+	z-index:999;
+	left: 0;
+	top:43px;
+	position: absolute;
+}
+
+.PayButtonImg {
+	display:block;
+	z-index:0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 210px;
+	border: 0;
+}
+
+.PayButtonBox {
+    position: relative;
+	width:450px;
+	height:185px;
+	margin:auto;
+}
+
+.PayButtonBox a { 
+    text-decoration:none; 
+}
+
+.PayButtonBox:hover .PayButtonText {
+	text-shadow:0 1px 0 rgba(255,255,255,0.5),0px 1px 20px rgba(255,255,244,0.9);
+}
+
+/***** TESTIMONIAL PHOTO *******/
+.DoublePhoto {
+    background:url('http://1e67e95d1369bbb42c38-7f38e3389c1f571968a0ba0052518ae7.r47.cf1.rackcdn.com/resources/img/layer1.png') no-repeat;
+    width: 336px;
+    height: 350px;
+    margin-right: 44px;
+}
+
+.DoublePhoto img {
+    width: 133px;
+    height: 218px;
+}
+
+.DoublePhoto .FirstLayer {
+    position: absolute;
+    z-index: 555;
+}
+
+.DoublePhoto .FirstLayer img {
+    margin-left: 36px;
+    margin-top: 50px;
+    transform: rotate(-6deg);
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(6deg);
+    -ms-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
+}
+
+.DoublePhoto .SecondLayer {
+    background:url('http://1e67e95d1369bbb42c38-7f38e3389c1f571968a0ba0052518ae7.r47.cf1.rackcdn.com/resources/img/layer2.png') no-repeat;
+    position: absolute;
+    width: 336px;
+    height: 350px;
+    z-index: 999;
+}
+
+.DoublePhoto .SecondLayer img {
+    margin-top: 50px;
+    margin-left: 172px;
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    -ms-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
+    transform: rotate(6deg);
+}
+
+/*
+* block elements for madafaking IE
+*/
+
+header, section, footer, article, nav {
+    display: block;
+}

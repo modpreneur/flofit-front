@@ -1,0 +1,35 @@
+parameters:
+#    parameter_name: value
+
+services:
+  stripeService:
+    class: FloFitBundle\Services\StripeService
+    arguments: ["@service_container"]
+
+  stripeTwig:
+    class: FloFitBundle\Twig\StripeExtends
+    arguments: ["@service_container"]
+    tags: [name: twig.extension ]
+
+  paymentHelperService:
+    class: FloFitBundle\Services\PaymentHelperService
+    arguments: ["@service_container"]
+
+  browser_detect_service:
+    class: FloFitBundle\Services\Browser
+
+  maropost_connector_service:
+    class: FloFitBundle\Services\MaropostConnector
+    arguments: ["@service_container"]
+
+  strikeiron_service:
+    class: FloFitBundle\Services\Strikeiron
+    arguments: ["@service_container"]
+
+  clickbank_service:
+    class: FloFitBundle\Services\ClickbankService
+    arguments: ["%clickbank_site%", "%clickbank_api_auth%"]
+
+  product_solver_service:
+    class: FloFitBundle\Services\ProductSolverService
+    arguments: ["@clickbank_service", "@doctrine"]

@@ -1,0 +1,128 @@
+{% extends "::base.html.twig" %}
+
+{% block headStylesheets %}
+    {#<link rel="stylesheet" href="{{ asset("css/upsell.css") }}"/>#}
+    {% stylesheets '@FloFitBundle/Resources/public/less/upsell.less' filter="less" output="css/upsell.css"  %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/tiecons.css") }}"/>
+    <style>
+        .jw-controlbar {
+            display: none !important;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="span-medium-24 text-center">
+                    <a href=""><i class="ff ff-FF-logo"></i></a>
+                    <p><span>Do Not Hit Your “Back” Button</span>Pressing your “back” button can cause you to accidentally double-order</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <section>
+        <hr/>
+        <div class="container">
+            <div class="row">
+                <div class="span-large-20 offset-large-2">
+                    <p class="font-12 text-center margin-top-40 lighter">ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 917 S. Lusk Street, Suite 200, Boise Idaho, 83706, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product.</p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="span-medium-24">
+                    {#<a href=""><i class="ff ff-flofitlogo"></i></a>#}
+                    <p class="font-12 text-center margin-vertical-10 lighter">FLO FIT © {{ "now"|date("Y") }}</p>
+                    <p class="font-12 text-center margin-vertical-10 lighter">Burn It Now Productions, Inc. FLO FIT and FLO RIDA trademarks, name, image, and likeness are owned by FLO RIDA and FLO FIT Holdings LLC, and are being used under license by Flo Life LLC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src='//cbtb.clickbank.net/?vendor=flofit&theme=LIGHT_GREY'></script>
+    {% if useJW7 %}
+        <!-- PLAYER -->
+        <script src="http://content.jwplatform.com/libraries/cIS7inOF.js"></script>
+        <script>
+            function loadPlayer() {
+                jwplayer("video").setup({
+                    stretching: "uniform",
+                    aspectratio: "16:9",
+                    primary: "html5",
+                    width: "100%",
+                    file: "{{ videoSource }}",
+                    image: "{{ asset("images/video-thumb-ff.jpg") }}",
+                    autostart: true
+                });
+                // set the volume to 100% just in case the user turned it down
+                jwplayer().setVolume(100);
+            }
+
+            setTimeout(loadPlayer, 1);
+        </script>
+
+    {% else %}
+        <!-- SCRIPTS - Player START -->
+        <script src="{{ asset("js/jwplayer6.js") }}"></script>
+        <script>
+            function loadPlayer() {
+                jwplayer("video").setup({
+                    stretching: "uniform",
+                    primary: "flash",
+                    aspectratio: "16:9",
+                    width: "100%",
+                    file: "{{ videoSource }}",
+                    image: "{{ asset("images/video-thumb-ff.jpg") }}",
+                    autostart: true,
+                    skin: "{{ asset("skin-mobile.xml", "app") }}"
+                });
+                // set the volume to 100% just in case the user turned it down
+                jwplayer().setVolume(100);
+            }
+
+            setTimeout(loadPlayer, 1);
+
+        </script>
+        <!-- SCRIPTS - Player END -->
+
+    {% endif %}
+
+    <!-- SCRIPTS - Ecommerce START -->
+    <script>
+        function GAEcommerceSendTransaction() {
+            console.log("GA: Sending purchase: {{ productName }} - {{ productId }} - {{ price }}");
+
+            ga('ecommerce:addItem', {
+                'id': '{{ cbf }}', // Transaction ID. Required.
+                'name': '{{ productName }}', // Product name. Required.
+                'sku': '{{ productId }}', // SKU/code.
+                'price': '{{ price }}', // Unit price.
+                'quantity': '1'   // Quantity.
+            });
+
+            ga('ecommerce:send');
+        }
+
+        $(".buy-link-accept").on("click", GAEcommerceSendTransaction);
+    </script>
+    <!-- SCRIPTS - Ecommerce END -->
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Credit card info</h1>
+    <h2>You will buy this awesome product: {{ product.name }}</h2>
+    <p>{{ product.description|raw }}</p>
+
+    <ul>
+        {% for productItem in product.productItems %}
+        <li>{{ productItem.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="row">
+        <div id="payment-form" class="payment-wrapper span-large-10">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="span-large-12">
+                    {{ form_row(form.first_name) }}
+                </div>
+                <div class="span-large-12">
+                    {{ form_row(form.second_name) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="span-large-24">
+                    {{ form_row(form.email) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="span-large-24">
+                    {{ form_row(form.credit_cart) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="span-large-8">{{ form_row(form.credit_cart_security) }}</div>
+                <div class="span-large-8">{{ form_row(form.credit_cart_expiration_month) }}</div>
+                <div class="span-large-8">{{ form_row(form.credit_cart_expiration_year) }}</div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    {{ renderStripeInit() }}
+{% endblock %}

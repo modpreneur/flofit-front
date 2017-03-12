@@ -1,0 +1,1004 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% if app.environment != "dev" %}
+        {% if experiment is defined and experiment %}
+            <!-- Google Analytics Content Experiment code -->
+            <script>function utmx_section(){}function utmx(){}(function(){var
+                        k='{{ experimentId }}',d=document,l=d.location,c=d.cookie;
+                    if(l.search.indexOf('utm_expid='+k)>0)return;
+                    function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+                    indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+                            length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+                            '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+                                    '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+                            '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+                            valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+                            '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+            </script><script>utmx('url','A/B');</script>
+            <!-- End of Google Analytics Content Experiment code -->
+        {% endif %}
+    {% endif %}
+
+    <meta name="keywords" content="">
+    <meta name="title" content="FLO FIT">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0"/>
+
+    <!-- facebook tags -->
+    <meta property="og:image" content="//flofit.com/images/flofit-blue-logo.png"/>
+    <meta property="og:image:secure_url" content="https://flofit.com/images/flofit-blue-logo.png"/>
+    <meta property="og:title" content="Flo Fit &mdash; FLO FIT"/>
+    <meta property="og:url" content="https://www.flofit.com/"/>
+    <meta property="og:site_name" content="FLO FIT"/>
+    <meta property="og:type" content="website"/>
+
+    <title>FLO FIT</title>
+
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/roboto.min.css") }}"/>
+
+    {% stylesheets '@FloFitBundle/Resources/public/less/sales-page-v02.less' filter="less" output="css/sales-page_new_dev.css"  %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset("css/sales-page_new_dev.css") }}"/>
+    {% endstylesheets %}
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    {#<script src="{{ asset("js/hermi.js") }}"></script>#}
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="sales-page-2 sales-page-3 header-team">
+<div class="clickbank-header">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <!-- ClickBank Trust Badge -->
+                <script src='//cbtb.clickbank.net/?vendor=flofit&theme=LIGHT_GREY'></script>
+            </div>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24 static">
+                <div class="left">
+                    <img src="{{ asset("images/sales-page/flo-fit-logo.png") }}"
+                         class="img-responsive main-logo-flo"
+                         alt="FLO FOT"/>
+                    <h2><span>RAPID</span> BODY REDEFINITION</h2>
+                </div>
+                <div class="right">
+                    <img src="{{ asset("images/sales-page/header-flofit-team.png") }}"
+                         class="img-responsive"
+                         alt="FLOFIT Team"/>
+                    <h2>• TEAM FLO&nbsp;FIT •</h2>
+                    <div class="hgroup flo-rida">
+                        <h3>FLO&nbsp;RIDA</h3>
+                        <h4>GRAMMY-NOMINATED RECORDING ARTIST</h4>
+                    </div>
+                    <div class="hgroup rachele-brooke-smith">
+                        <h3>RACHELE <br/>BROOKE SMITH</h3>
+                        <h4>ACTRESS</h4>
+                    </div>
+                    <div class="hgroup mike-saffaie">
+                        <h3>MIKE SAFFAIE</h3>
+                        <h4 style="width:200px;">MR. CALIFORNIA PHYSIQUE</h4>
+                        <h4>2013</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="bg-green-gradient">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <h2 class="font-54">WANT RESULTS IN JUST <span class="display-inline-block">8 WEEKS?</span></h2>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="video-top">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24 fix-overflow">
+                <div class="rapid-body-definition">
+                    Celebrity trainer and Mr. California Physique 2013 winner <strong>MIKE&nbsp;SAFFAIE</strong> has teamed up with hip-hop megastar <strong>FLO&nbsp;RIDA</strong> to bring you <strong>FLO&nbsp;FIT</strong>. For the first time Mike shares his celebrity fitness secrets and his breakthrough <strong>RAPID BODY REDEFINITION</strong> system that got <strong>FLO&nbsp;RIDA</strong> ripped in just 8 weeks.
+                </div>
+                <div class="list">
+                    <p><span>SHRED FAT UP TO 2x FASTER!</span></p>
+                    <p><span>“HYPER” TARGET & SCULPT ARMS, ABS, LEGS, & MORE</span></p>
+                    <p><span>LOSE WEIGHT. GET RIPPED. LOOK AMAZING.</span></p>
+                </div>
+                <div class="video">
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-left-small.png") }}" src=""
+                         class="left lazy-only video-arrow-left"
+                         alt="–>"/>
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-right-small.png") }}" src=""
+                         class="right lazy-only video-arrow-right"
+                         alt="<–"/>
+                    <div class="video-box">
+                        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_az0gr2akji videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+                        <p><span class="red">WARNING!</span> THIS SHORT DEMO WILL MAKE YOU WANT TO <span class="underline">MOVE</span>!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- atc section -->
+<section class="gradient-white-grey guarantee guarantee3">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="choose-text">
+                    <p class="font-38">YES! I WANT TO START MY 8 WEEK TRANSFORMATION RIGHT NOW</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24 text-center fix-overflow">
+                <div class="relative">
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-left.png") }}" src=""
+                         class="left lazy-only"
+                         alt="–>"/>
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-right.png") }}" src=""
+                         class="right lazy-only"
+                         alt="<–"/>
+                    <div class="cart-box">
+                        <div class="item active mobile">
+                            <div class="barge">Best Value</div>
+                            <h2>Get Both<small>Digital Streaming and Online Access PLUS DVDs and Books Shipped</small></h2>
+                            <p>The entire FLO&nbsp;FIT program shipped to you as well as lifetime online access.</p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming-and-physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ digphyBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item">
+                            <h2>Digital Streaming<small>and Online Access</small></h2>
+                            <p>Streaming workout videos and online access to entire FLO&nbsp;FIT program forever.<span class="display-block">(Lifetime Access)</span></p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$79</h3>
+                                <h3 class="new-price">$37</h3>
+                            </div>
+                            <a href="{{ digitalBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item">
+                            <h2>Physical DVDs<small>and Books Shipped To You</small></h2>
+                            <p>All FLO&nbsp;FIT workout DVDs and Books shipped to your front door<span class="display-block">(ships within 48 hours)</span></p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ physicalBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item active desktop">
+                            <div class="barge">Best Value</div>
+                            <h2>Get Both<small>Digital Streaming and Online Access PLUS DVDs and Books Shipped</small></h2>
+                            <p>The entire FLO&nbsp;FIT program shipped to you as well as lifetime online access.</p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming-and-physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ digphyBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /atc section -->
+
+<section class="bg-green-gradient">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <h2 class="">HERE’S WHY FLO FIT WORKS</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-arrow section-5">
+    <div class="container nopadd">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="not-only-small-tablet">
+                    <img data-original="{{ asset("images/sales-page/flo-rachele.png") }}" src=""
+                     class="img-responsive margin-auto lazy-only"
+                     alt="Flo Rida & Rachele Brooke Smith"/>
+                </div>
+                <div class="only-small-tablet">
+                    <img data-original="{{ asset("images/sales-page/flo-rachele-p1.png") }}" src=""
+                         class="img-responsive margin-auto lazy-only"
+                         alt="Flo Rida & Rachele Brooke Smith"/>
+                    <img data-original="{{ asset("images/sales-page/flo-rachele-p2.png") }}" src=""
+                         class="img-responsive margin-auto lazy-only"
+                         alt="Flo Rida & Rachele Brooke Smith"/>
+                </div>
+            </div>
+            <div class="span-medium-24">
+                <div class="possible-flofit">
+                    <h3>Going “Up & Down the Ladder” will make you H.I.R.T. so GOOD</h3>
+
+                    <h4>Spend Less Time Working Out</h4>
+                    <p>FLO&nbsp;FIT reduces your workout time – even up to half as long as a traditional hour-long cardio session – by intelligently working every part of your body, from head to toe, top to bottom, using the meticulously designed LADDER PRINCIPLE.</p>
+
+                    <h4>H.I.R.T. Training Gets Results</h4>
+                    <p>Also interwoven into the program is the science of High Intensity Resistance Training, or H.I.R.T.  These techniques significantly raise the intensity of the workouts with shortened rest intervals.</p>
+
+                    <h4>Climb The Ladder</h4>
+                    <p>Combined with the LADDER PRINCIPLE, FLO&nbsp;FIT’s H.I.R.T. better extends AFTERBURN, the scientific term for burning more calories even AFTER your workout, sometimes for up to 72 hours!</p>
+
+                    <p>Add it all up and by using FLO&nbsp;FIT you will TORCH WAY MORE FAT by burning more calories than if you’d exercised at a lower intensity for the same (or longer) period of time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gradient-green-arrow">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="special-p font-54">CAN I GET FIT IN 30 MINUTES?</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-gray-arrow">
+    <div class="container padding-vertical">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="text-01"><span class="font-50">YES!</span> <span class="font-38">WITH FLO&nbsp;FIT’S FULL BODY WORKOUTS</span></p>
+                <p class="font-22">FLO&nbsp;FIT utilizes both THE LADDER PRINCIPLE and H.I.R.T. to efficiently maximize your workout time and get you going about your day.  Even with a specific focus, they are always working your entire body — top to bottom, all in only 30 MINUTES!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dvds">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-10">
+                <img data-original="{{ asset('images/sales-page/1_FULL_BODY_DEFINTION.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="1. FULL BODY DEFINITION"/>
+            </div>
+            <div class="span-none-padding-medium-14 right">
+                <h3>1. FULL BODY DEFINITION</h3>
+                <p>Blast your entire body with this high intensity full body workout specially designed to destroy fat and shape muscle.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-small-24 display-show-small">
+                <img data-original="{{ asset('images/sales-page/2_LOWER_BODY_DEFINITION.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="2. LOWER BODY DEFINITION"/>
+            </div>
+            <div class="span-none-padding-medium-14 span-none-padding-small-24 left">
+                <h3>2. LOWER BODY DEFINITION</h3>
+                <p>Be ready to get after it in this intense lower body workout. If your legs aren’t burning after this one you’re doing it wrong!</p>
+            </div>
+            <div class="span-medium-10 display-hide-small">
+                <img data-original="{{ asset('images/sales-page/2_LOWER_BODY_DEFINITION.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="2. LOWER BODY DEFINITION"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-10">
+                <img data-original="{{ asset('images/sales-page/3_FULL_BODY_EXPLOSIVE.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="3. FULL BODY EXPLOSIVE POWER"/>
+            </div>
+            <div class="span-none-padding-medium-14 right">
+                <h3>3. FULL BODY EXPLOSIVE POWER</h3>
+                <p>Get ready to explode! This workout will have you moving, jumping, & rapidly burning calories.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-small-24 display-show-small">
+                <img data-original="{{ asset('images/sales-page/4_ARM_DEFINITION.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="4. ARM DEFINITION"/>
+            </div>
+            <div class="span-none-padding-medium-14 span-none-padding-small-24 left">
+                <h3>4. ARM DEFINITION</h3>
+                <p>This full body workout is designed to build long lean muscular arms while also torching fat all over your entire body.</p>
+            </div>
+            <div class="span-medium-10  display-hide-small">
+                <img data-original="{{ asset('images/sales-page/4_ARM_DEFINITION.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="4. ARM DEFINITION"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-10">
+                <img data-original="{{ asset('images/sales-page/5_CORE_DEFINTION.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="5. CORE DEFINITION"/>
+            </div>
+            <div class="span-none-padding-medium-14 right">
+                <h3>5. CORE DEFINITION</h3>
+                <p>This workout focuses on your whole core to get you that 6-pack you’ve been looking for.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-gray-arrow">
+    <div class="container padding-bottom">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="text-01 font-38"><span class="font-50">COMBINED WITH</span> SHORT TARGET TRAINING WORKOUTS</p>
+                <p class="font-22">FLO&nbsp;FIT’S RAPID BODY REDEFINITION lets you continue to target, then further define and sculpt the areas of the body we all obsess over with these 5 additional HIGH DEF EXPRESS workouts.  These are quick, but effective 10 minute workouts that you’ll absolutely love.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dvds-02">
+    <div class="container text-center">
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/1_Chest_Back.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="High Def Express for Chest & Back"/>
+                <div class="center">
+                    <h3>High Def Express for Chest & Back</h3>
+                    <p>For a sexy, well-defined, chest and back.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/2_Arms.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="High Def Express for Arms"/>
+                <div class="center">
+                    <h3>High Def Express for Arms</h3>
+                    <p>Build the perfect arms you’ve always wanted—whether you’re looking for lean and sculpted or big and powerful.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/3_Shoulders.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="High Def Express for Shoulders"/>
+                <div class="center">
+                    <h3>High Def Express for Shoulders</h3>
+                    <p>For killer shoulders that will turn heads from the club to the beach.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/4_HDX_Abs_NEW.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="High Def Express for Abs"/>
+                <div class="center">
+                    <h3>High Def Express for Abs</h3>
+                    <p>Get those amazing, envy-inducing abs!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/5_HDX_LowerBody.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="High Def Express for Lower Body"/>
+                <div class="center">
+                    <h3>High Def Express for Lower Body</h3>
+                    <p>For that killer butt and beautiful legs you crave.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-gray-arrow stream-section-head">
+    <div class="container padding-bottom">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="text-01 font-38"><span class="font-50">SKIP THE DVDs AND WORKOUT ANYWHERE, ANY TIME</span>
+                </p>
+                <p class="font-22">
+                    No matter where you are, you can get access to your FLO FIT workouts —
+                    all you need is an internet connection. You can watch your workouts
+                    on your computer, mobile phone, tablet, TV and more. 
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mobile-app-section">
+    <div class="container" style="position:relative;">
+        <div class="white-box">
+            <div class="span-medium-24 margin-top-20">
+                <p>Supported Devices</p>
+                <ul>
+                    <li>iPad</li>
+                    <li>iPhone</li>
+                    <li>iPod</li>
+                    <li>Android</li>
+                    <li>Computer(PC/Mac)</li>
+                    <li>Television</li>
+                    <li>Apple TV(AirPlay)</li>
+                </ul>
+            </div>
+        </div>
+        <img src="{{ asset('images/sales-page/streaming-cover.png') }}" class="streaming-cover-img">
+    </div>
+</section>
+
+<section class="bg-gradient-green-arrow biggest nutrition-made-easy">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="special-p font-58">NUTRITION MADE EASY</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="nutrition-made-easy-light">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24 margin-bottom-15">
+                <div class="left">
+                    <img data-original="{{ asset('images/sales-page/nutrition-guide-mock-up-2D.jpg') }}" src=""
+                         class="img-responsive top lazy-only img-special-1 img-1-mobile"
+                         alt="Nutrition guide mock up"/>
+                    <img data-original="{{ asset('images/sales-page/nutrition-guide-mock-up.png') }}" src=""
+                         class="img-responsive top lazy-only img-special-1 img-1-desktop"
+                         alt="Nutrition guide mock up"/>
+                </div>
+                <div class="right top">
+                    <p class="font-28">You can enjoy what you eat, feel full and satisfied, and get in the shape you want – all thanks once again to FLO&nbsp;FIT’s <strong>Rapid Body Redefinition.</strong></p>
+                    <p class="margin-top-30 font-28">NO STARVING YOURSELF or DEPRIVING YOURSELF of the FOODS YOU LOVE!</p>
+                </div>
+            </div>
+            <div class="span-medium-24 margin-top-15">
+                <div class="left">
+                    <img data-original="{{ asset('images/sales-page/salmon-plate-stock.jpg') }}" src=""
+                         class="img-responsive bottom lazy-only img-special-2"
+                         alt="Salmon plate stock"/>
+                </div>
+                <div class="right bottom">
+                    <p class="font-28">Here’s just a small taste of what’s included in the <span class="uppercase">comprehensive Nutrition Guide:</span></p>
+                    <ul class="font-22">
+                        <li>How to find the time to shop for, prepare, and eat the right foods</li>
+                        <li>Your own Personal Nutrition Worksheet, where you’ll learn the best nutrition program for YOUR body</li>
+                        <li>How to figure out EXACTLY how many calories to eat to achieve your goals (too FEW is as bad as too many!)</li>
+                        <li>Easy-to-follow meal plans along with food prep directions and delicious recipes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-green-arrow biggest">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="special-p font-54">WILL I GET AMAZING RESULTS?</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-gray-arrow just-p">
+    <div class="container padding-vertical">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="text-01 font-38"><span class="font-50">YES!</span> JUST ASK OLIVER WHO <span class="text-02 font-50">“GOT RESULTS IMMEDIATELY”</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/oliver.jpg') }}" src=""
+                     class="img-responsive lazy-only oliver"
+                     alt="Oliver"/>
+                <div class="center">
+                    <p>“You won’t believe how easy FLO FIT is to follow and how enjoyable the workouts are. I got results immediately and lost 20 pounds during the 8 week program.</p>
+                    <p>Mike Saffaie will keep you motivated! He’s an amazing trainer.”</p>
+                    <div class="about">
+                        <span class="name">OLIVER  •  41 years old</span>
+                        <span class="results">RESULTS  •  Lost 20 lbs. <span class="display-inline-block">(192 to 172 lbs.)</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-gray-arrow just-p">
+    <div class="container padding-bottom">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="text-01 font-38"><span class="font-50">AND STEVE WHO THANKS TO FLO&nbsp;FIT</span>“HAD MORE UPPER BODY DEFINITION <span class="text-02 font-50">THAN EVER”</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="testimonial steve">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/steve.png') }}" src=""
+                     class="img-responsive lazy-only oliver"
+                     alt="Steve"/>
+                <div class="center">
+                    <p>“When I started the FLO FIT training program I was 185 lbs. I am 5’9, had very little muscle definition, and had excess fat on my waistline, chest and arms. After 8 weeks I was down to 170 lbs. and had more upper body definition than ever.</p>
+                    <p>I truly believe in this program, it’s one of the best purchases I’ve ever made!”</p>
+                    <div class="about">
+                        <span class="name">steve  •  27 years old</span>
+                        <span class="results">RESULTS  •  Lost 15 lbs. <span class="display-inline-block">(185 to 170 lbs.)</span></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="gradient-white-grey guarantee guarantee3">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="choose-text">
+                    <p class="font-38">YES! I WANT TO START MY 8 WEEK TRANSFORMATION RIGHT NOW</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24 text-center fix-overflow">
+                <div class="relative">
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-left.png") }}" src=""
+                         class="left lazy-only"
+                         alt="–>"/>
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-right.png") }}" src=""
+                         class="right lazy-only"
+                         alt="<–"/>
+                    <div class="cart-box">
+                        <div class="item active mobile">
+                            <div class="barge">Best Value</div>
+                            <h2>Get Both<small>Digital Streaming and Online Access PLUS DVDs and Books Shipped</small></h2>
+                            <p>The entire FLO&nbsp;FIT program shipped to you as well as lifetime online access.</p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming-and-physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ digphyBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item">
+                            <h2>Digital Streaming<small>and Online Access</small></h2>
+                            <p>Streaming workout videos and online access to entire FLO&nbsp;FIT program forever.<span class="display-block">(Lifetime Access)</span></p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$79</h3>
+                                <h3 class="new-price">$37</h3>
+                            </div>
+                            <a href="{{ digitalBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item">
+                            <h2>Physical DVDs<small>and Books Shipped To You</small></h2>
+                            <p>All FLO&nbsp;FIT workout DVDs and Books shipped to your front door<span class="display-block">(ships within 48 hours)</span></p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ physicalBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item active desktop">
+                            <div class="barge">Best Value</div>
+                            <h2>Get Both<small>Digital Streaming and Online Access PLUS DVDs and Books Shipped</small></h2>
+                            <p>The entire FLO&nbsp;FIT program shipped to you as well as lifetime online access.</p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming-and-physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ digphyBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-green-arrow">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="special-p font-50">WHAT DO YOU GET WITH FLO&nbsp;FIT?</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="video-top video-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24 fix-overflow">
+                <div class="video">
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-left-small.png") }}" src=""
+                         class="left lazy-only video-arrow-left"
+                         alt="–>"/>
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-right-small.png") }}" src=""
+                         class="right lazy-only video-arrow-right"
+                         alt="<–"/>
+                    <div class="video-box">
+                        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_4jw9yrvoek videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+                    </div>
+                    <p class="under-video black">FLO&nbsp;FIT HAS <span class="underline">EVERYTHING</span> YOU NEED TO GET IN THE BEST SHAPE OF YOUR LIFE!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gradient-white-grey">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <img data-original="{{ asset('images/sales-page/flo-fit-logo.png') }}" src=""
+                     class="img-responsive logo lazy-only"
+                     alt="FLO FIT logo"/>
+                <img data-original="{{ asset('images/sales-page/fully-covers-2.png') }}" src=""
+                     class="img-responsive lazy-only"
+                     alt="Fully covers"/>
+                <div class="text-center">
+                    <h2 class="blue-btn">THE COMPLETE RAPID&nbsp;BODY REDEFINITION SYSTEM</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="span-medium-24">
+                <div class="list">
+                    <h3>8 Weeks of FULL BODY Workouts</h3>
+                    <p>Each session with Mike & FLO&nbsp;RIDA will be 30 minutes of intense exercise disguised as high-energy fun</p>
+
+                    <h3>SHORT TARGET TRAINING Workouts</h3>
+                    <p>These 10 minute HIGH DEF EXPRESS workouts target and sculpt the areas we all obsess over like ABS, ARMS, & LEGS</p>
+
+                    <h3>Detailed WORKOUT GUIDE BOOK</h3>
+                    <p>Mike’s workout secrets are all here, including simple tips that will accelerate your results and maximize fat loss</p>
+
+                    <h3>Comprehensive NUTRITION GUIDE BOOK</h3>
+                    <p>Follow FLO&nbsp;FIT’s simple food guidelines & you’ll eat properly while you enjoy the foods you love</p>
+
+                    <h3>8-WEEK TRAINING CALENDARS <br/>Beginner, Intermediate, Advanced</h3>
+                    <p>Step-by-step training calendars carefully created to ensure EVERYONE can get results from FLO&nbsp;FIT, regardless of age or fitness level</p>
+
+                    <h3>ULTIMATE PLATINUM Workouts</h3>
+                    <p>Two more heart-pounding 30 Minute Full Body Workouts: <span class="uppercase">Platinum Iso Explode</span> and <span class="uppercase">Upper Body Definition.</span> Includes the <span class="uppercase">8-Week Platinum Training Calendar</span> to guide you through this next level FLO&nbsp;FIT mix.</p>
+
+                    <h3>8-WEEK MASTER MIX MEAL PLAN</h3>
+                    <p>Tons of delicious recipes and meal ideas for breakfast, lunch, dinner, and even snacks. PLUS more nutrition advice and guidance that will maximize your body’s transformation during the 8 week program and beyond.</p>
+
+                    <h3>7 DAY RIP MIX</h3>
+                    <p>The <span class="uppercase">7 Day Rip Mix Workout Calendar</span> and <span class="uppercase">Meal Plan</span> can be used at any point in the FLO&nbsp;FIT program. Guaranteed to help you burn more calories, get leaner, tone your body, and get the results you want in the quickest time possible.</p>
+
+                    <h3>MEMBERSHIP IN THE FLO&nbsp;FIT COMMUNITY</h3>
+                    <p>You’ll have 24/7 support & encouragement from fitness experts and other FLO&nbsp;FIT customers</p>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="span-medium-24">
+                <h2 class="headline-02 font-38">TRY IT NOW FREE FOR 7 DAYS & GET <span class="font-50">3 LIMITED TIME BONUS GIFTS</span></h2>
+            </div>
+            <div class="dvds-02">
+                <div class="span-medium-24">
+                    <img data-original="{{ asset('images/sales-page/cover-mobile-macbook.png') }}" src=""
+                         class="img-responsive lazy-only"
+                         alt="Flo Fit - Flo rida - 03"/>
+                    <div class="center">
+                        <h3 class="line-height-12">BONUS 1 MONTH FREE ACCESS to Members Only “PLATINUM CLUB”</h3>
+                        <p class="margin-top-5">This is like getting a “backstage pass” into the exclusive world of celebrity fitness! A $79 value, you’ll have one month free to experience super-exclusive content and insider tips to help you get the best results possible, special brand-new bonus FLO&nbsp;FIT workouts, additional FLO&nbsp;FIT meals, recipes and nutrition books, and MORE!</p>
+                    </div>
+                </div>
+                <div class="span-medium-24">
+                    <img data-original="{{ asset('images/sales-page/cover-cd-video.png') }}" src=""
+                         class="img-responsive lazy-only"
+                         alt="Flo Fit - Flo rida - 01"/>
+                    <div class="center">
+                        <h3 class="line-height-12">bonus 30 Minute FULL BODY EXTREME Workout</h3>
+                        <p class="margin-top-5">Packed with brand new, hard-charging exercises that will get your blood going and your metabolism roaring! Push your conditioning to the MAX in this intense full body workout</p>
+                    </div>
+                </div>
+                <div class="span-medium-24">
+                    <img data-original="{{ asset('images/sales-page/cover-video-video.png') }}" src=""
+                         class="img-responsive lazy-only"
+                         alt="Flo Fit - Flo rida - 02"/>
+                    <div class="center">
+                        <h3 class="line-height-12">BONUS DYNAMIC WARM UP & COOL DOWN Videos</h3>
+                        <p class="margin-top-5">Warming up and cooling down are some of the most overlooked aspects of working out. With these additional 10 minute videos you’ll be sure to get the most out of your workouts and recovery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-green-arrow">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <p class="special-p uppercase font-58">START FLO FIT TODAY!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="gradient-white-grey guarantee">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="headline">
+                    <h2 class="font-50">NOT SURE?</h2>
+                    <p class="font-28">We want you to be 100% satisfied, so with FLO&nbsp;FIT</p>
+                    <h3 class="font-50">RESULTS ARE GUARANTEED OR YOUR MONEY BACK!</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="text-01">
+                    <div class="center-left">
+                        <img data-original="{{ asset('images/sales-page/guarantee.png') }}" src=""
+                             class="img-responsive margin-auto lazy-only img-special-3"
+                             alt="100% Guarantee"/>
+                    </div>
+                    <div class="center">
+                        <p class="font-22">Let us make your decision even simpler. We're going to let you try the entire program for 60 days — and if you’re not satisfied we’ll provide a FULL REFUND (less shipping & handling).</p>
+                        <p class="font-22">We refuse to keep your money if FLO&nbsp;FIT doesn’t work for you, or you’re
+                            unhappy in any way.</p>
+                        <p class="font-22">We’ve removed all the worry, so go ahead and try FLO&nbsp;FIT for yourself – TODAY.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="box-money-back">
+                    <h2 class="font-58">
+                        <span class="display-block">60-DAY NO RISK</span>
+                        <span class="display-block">MONEY BACK</span>
+                        <span class="display-block">GUARANTEE</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="choose-text">
+                    <p class="font-38">YES! I WANT TO START MY 8 WEEK TRANSFORMATION RIGHT NOW</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24 text-center fix-overflow">
+                <div class="relative">
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-left.png") }}" src=""
+                         class="left lazy-only"
+                         alt="–>"/>
+                    <img data-original="{{ asset("/images/sales-page/arrow-green-right.png") }}" src=""
+                         class="right lazy-only"
+                         alt="<–"/>
+                    <div class="cart-box">
+                        <div class="item active mobile">
+                            <div class="barge">Best Value</div>
+                            <h2>Get Both<small>Digital Streaming and Online Access PLUS DVDs and Books Shipped</small></h2>
+                            <p>The entire FLO&nbsp;FIT program shipped to you as well as lifetime online access.</p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming-and-physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ digphyBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item">
+                            <h2>Digital Streaming<small>and Online Access</small></h2>
+                            <p>Streaming workout videos and online access to entire FLO&nbsp;FIT program forever.<span class="display-block">(Lifetime Access)</span></p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$79</h3>
+                                <h3 class="new-price">$37</h3>
+                            </div>
+                            <a href="{{ digitalBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item">
+                            <h2>Physical DVDs<small>and Books Shipped To You</small></h2>
+                            <p>All FLO&nbsp;FIT workout DVDs and Books shipped to your front door<span class="display-block">(ships within 48 hours)</span></p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ physicalBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                        <div class="item active desktop">
+                            <div class="barge">Best Value</div>
+                            <h2>Get Both<small>Digital Streaming and Online Access PLUS DVDs and Books Shipped</small></h2>
+                            <p>The entire FLO&nbsp;FIT program shipped to you as well as lifetime online access.</p>
+                            <div class="cover">
+                                <img data-original="{{ asset('images/sales-page/digital-streaming-and-physical-dvds.png') }}" src=""
+                                     class="img-responsive lazy-only"
+                                     alt="Digital Streaming"/>
+                            </div>
+                            <div class="hgroup">
+                                <h3 class="old-price">$119</h3>
+                                <h3 class="new-price">$67</h3>
+                            </div>
+                            <a href="{{ digphyBuyLink }}" class="btn btn-sec">ADD TO CART</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <p>Consult your physician and follow all safety instructions before beginning any exercise program. <br/>All trademarks, products and service names are the property of their respective owners.</p>
+
+                <p>Results may vary. Exercise and proper diet are necessary to achieve and maintain weight loss and muscle definition. <br/>Please send all questions and order inquiries to <a href="mailto:help@flofit.com">help@flofit.com</a></p>
+
+                <p>ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 917 S. Lusk Street, Suite 200, Boise Idaho, 83706, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion ofthis product.</p>
+
+                <p>FLO FIT © 2016</p>
+
+                <p>Burn It Now Productions, Inc. FLO FIT and FLO RIDA trademarks, name, image, and likeness are owned by FLO RIDA and FLO FIT Holdings LLC, and are being used under license by Flo Life LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{{ asset("js/lazy.min.js") }} async defer"></script>
+<script src="{{ asset("js/lazy-loading-new.min.js") }} async defer"></script>
+
+<!-- Google Analytics code START -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-68358953-1', 'auto');
+    ga('require', 'displayfeatures');  // demographic features
+    ga('send', 'pageview');
+
+</script>
+<!-- Google Analytics code END -->
+
+<!-- Begin Inspectlet Embed Code -->
+<script type="text/javascript" id="inspectletjs">
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 133415410]);
+    (function() {
+        function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+        setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+    })();
+</script>
+<!-- End Inspectlet Embed Code -->
+
+<div id="fb-root"></div>
+
+<!-- Crazy Egg START -->
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0018/9411.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>
+<!-- Crazy Egg END -->
+
+{{ pixel|raw }}
+
+<!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+    var google_tag_params = {
+        dynx_itemid: 'REPLACE_WITH_VALUE',
+        dynx_itemid2: 'REPLACE_WITH_VALUE',
+        dynx_pagetype: 'REPLACE_WITH_VALUE',
+        dynx_totalvalue: 'REPLACE_WITH_VALUE',
+    };
+</script>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 928791961;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/928791961/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+{% if displayFBCode %}
+{% endif %}
+
+
+{% include "FloFitBundle:Components:facebook-pixel.html.twig" %}
+
+</body>
+</html>

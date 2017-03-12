@@ -1,0 +1,1170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% if app.environment != "dev" %}
+        {% if experiment is defined and experiment %}
+            <!-- Google Analytics Content Experiment code -->
+            <script>function utmx_section(){}function utmx(){}(function(){var
+                        k='{{ experimentId }}',d=document,l=d.location,c=d.cookie;
+                    if(l.search.indexOf('utm_expid='+k)>0)return;
+                    function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+                    indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+                            length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+                            '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+                                    '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+                            '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+                            valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+                            '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+            </script><script>utmx('url','A/B');</script>
+            <!-- End of Google Analytics Content Experiment code -->
+        {% endif %}
+    {% endif %}
+
+    <meta name="keywords" content="">
+    <meta name="title" content="FLO FIT">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0"/>
+
+    <!-- facebook tags -->
+    <meta property="og:image" content="//flofit.com/images/flofit-blue-logo.png"/>
+    <meta property="og:image:secure_url" content="https://flofit.com/images/flofit-blue-logo.png"/>
+    <meta property="og:title" content="Flo Fit &mdash; FLO FIT"/>
+    <meta property="og:url" content="https://www.flofit.com/"/>
+    <meta property="og:site_name" content="FLO FIT"/>
+    <meta property="og:type" content="website"/>
+
+    <title>FLO FIT</title>
+
+    {#<base href="https://www.flofit.com/"/>#}
+    {#<link href='//fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,900,700italic,900italic' rel='stylesheet'>#}
+    <link href='//fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    {#<link href="{{ asset("css/jquery.bxslider.css") }}" rel="stylesheet" />#}
+    <link href="{{ asset("css/jquery.bxslider.min.css") }}" rel="stylesheet"/>
+    {#<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/home.css") }}"/>#}
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/home.min.css") }}"/>
+    {#<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/roboto.css") }}"/>#}
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/roboto.min.css") }}"/>
+    {#<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/ff-icon.css") }}"/>#}
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/ff-icon.min.css") }}"/>
+    {#<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/jquery.fancybox.css") }}"/>#}
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/jquery.fancybox.min.css") }}"/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    {#<script src="{{ asset("js/jquery.bxslider.js") }}"></script>#}
+    <script src="{{ asset("js/jquery.bxslider.min.js") }}"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    {#<script src="{{ asset("js/hermi.js") }}"></script>#}
+
+</head>
+<body class="v2">
+<div class="clickbank-header">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <!-- ClickBank Trust Badge -->
+                <script src='//cbtb.clickbank.net/?vendor=flofit&theme=LIGHT_GREY'></script>
+            </div>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="container">
+        <div class="content">
+            <h1>How did Flo&nbsp;Rida<br/>get <span class="underline">this</span> ripped?</h1>
+            <button type="button" onclick="scrolldown()" id="btn-watch-presentation"><i class="fa fa-film"></i> Watch
+                demo
+            </button>
+            <h2>ROCK YOUR BODY <span>WITH THE</span> PERFECT MIX!</h2>
+        </div>
+        <img data-original="{{ asset("images/hp/header-flo-1-1200.png") }}" alt="FLO RIDA" class="lazy-1200 flo display-none"/>
+        <img data-original="{{ asset("images/hp/header-flo-1-1024.png") }}" alt="FLO RIDA"
+             class="lazy-320 lazy-768 lazy-960 lazy-1024 flo display-none"/>
+
+        <div class="social-icon">
+            <a href="https://www.facebook.com/GetFLOFIT?fref=ts" target="_blank"><i class="ff ff-fb"></i></a>
+            <a href="https://twitter.com/getflofit" target="_blank"><i class="ff ff-twitter"></i></a>
+            <a href="https://instagram.com/getflofit" target="_blank"><i class="ff ff-insta"></i></a>
+            <a href="https://www.youtube.com/channel/UCqjt-Tod1JMGgsjVevl4Lwg" target="_blank"><i
+                        class="ff ff-youtube2"></i></a>
+        </div>
+    </div>
+</header>
+
+<div class="container section-1 overflow-hidden">
+    {#<img src="" data-1200="{{ asset("images/1200/flofit.png") }}" data-1024="{{ asset("images/1024/flofit.png") }}"
+         data-960="{{ asset("images/960/flofit.png") }}" data-768="{{ asset("images/768/flofit.png") }}"
+         data-320="{{ asset("images/768/flofit.png") }}" class="flofit lazy" width="361" height="125" alt="FLO FIT" />#}
+    <img data-original="{{ asset("images/1200/flofit.png") }}" alt="" class="lazy-1200 flofit special-display" width="361" height="125"
+         alt="FLO FIT"/>
+    <img data-original="{{ asset("images/1024/flofit.png") }}" alt="" class="lazy-1024 flofit special-display" width="361" height="125"
+         alt="FLO FIT"/>
+    <img data-original="{{ asset("images/960/flofit.png") }}" alt="" class="lazy-960 flofit special-display" width="361" height="125"
+         alt="FLO FIT"/>
+    <img data-original="{{ asset("images/768/flofit.png") }}" alt="" class="lazy-768 lazy-320 flofit special-display" width="361"
+         height="125" alt="FLO FIT"/>
+
+
+    <div class="row">
+        <div class="span-1-3">
+            <h2>SHRED FAT</h2>
+            <p>High Intensity Strength Training & Interval Cardio TORCHES fat in HALF the time.</p>
+        </div>
+        <div class="span-1-3">
+            <h2>SCULPT & CHISEL</h2>
+            <p>Unique top to bottom Full Body workouts help build muscle tone by creating MAXIMUM AFTERBURN.</p>
+        </div>
+        <div class="span-1-3">
+            <h2>TARGET & DEFINE</h2>
+            <p>Zero in & attack problem areas to build Chisled Arms, a Strong Chest or that 6 pack you‘ve always
+                wanted.</p>
+        </div>
+    </div>
+    <div id="video_container">
+        <div class="text-center" id="video-presentation" style="display: none;margin-top: -20px;">
+            <div id="video"></div>
+        </div>
+    </div>
+    <hr class="margin-no" id="video-line" style="display: none"/>
+
+</div>
+<div class="container section-2" id="more">
+    {# <img src="" data-1200="{{ asset("images/1200/green-down-arrow.png") }}"
+          data-1024="{{ asset("images/1024/green-down-arrow.png") }}" data-960="{{ asset("images/960/green-down-arrow.png") }}"
+          data-768="{{ asset("images/768/green-down-arrow.png") }}" data-320=""
+          class="down lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-down-arrow.png") }}" alt="" class="lazy-1200 display-none down"/>
+    <img data-original="{{ asset("images/1024/green-down-arrow.png") }}" alt="" class="lazy-1024 display-none down"/>
+    <img data-original="{{ asset("images/960/green-down-arrow.png") }}" alt="" class="lazy-960 display-none down"/>
+    <img data-original="{{ asset("images/768/green-down-arrow.png") }}" alt="" class="lazy-768 display-none down"/>
+
+
+    <h2>HOW DO WE KNOW FLO FIT REALLY WORKS?</h2>
+    <h3>Just ask <strong>Flo&nbsp;Rida</strong>. He’s the living proof of <strong>FLO FIT’s</strong> fast, uncompromising
+        results.</h3>
+</div>
+<div class="container section-3">
+    <div>
+        {#<img src=""
+             data-1200="{{ asset("images/hp/fllo-flexing.png") }}"
+             data-1024="{{ asset("images/hp/fllo-flexing.png") }}"
+             data-960="{{ asset("images/hp/fllo-flexing.png") }}"
+             data-768="{{ asset("images/hp/fllo-flexing.png") }}"
+             data-320="{{ asset("images/hp/fllo-flexing.png") }}"
+             class="s31 lazy"/>#}
+        <img data-original="{{ asset("images/hp/fllo-flexing.png") }}" alt=""
+             class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 s31"/>
+    </div>
+    <div>
+        <p class="just f60">“I really didn’t know I could feel this good or look this lean until I met Mike. He changed
+            my whole view on working out. I had muscle before, but<br/><span class="red">He’s got the secret to getting lean.</span>"
+        </p>
+        {#<img src="" data-1200="{{ asset("images/1200/s32.png") }}" data-1024="{{ asset("images/1024/s32.png") }}"
+             data-960="{{ asset("images/960/s32.png") }}" data-768="{{ asset("images/768/s32.png") }}"
+             data-320="{{ asset("images/320/s32.png") }}" class="s32 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s32.png") }}" alt="" class="lazy-1200 s32 display-none"/>
+        <img data-original="{{ asset("images/1024/s32.png") }}" alt="" class="lazy-1024 s32 display-none"/>
+        <img data-original="{{ asset("images/960/s32.png") }}" alt="" class="lazy-960  s32 display-none"/>
+        <img data-original="{{ asset("images/768/s32.png") }}" alt="" class="lazy-768 s32 display-none"/>
+        <img data-original="{{ asset("images/320/s32.png") }}" alt="" class="lazy-320 s32 display-none"/>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="container section-4">
+    <div class="section-4-center">
+        <h2 class="white f36">WHO ELSE wants to look good from every angle&hellip;</h2>
+        {#<img src="" data-1200="{{ asset("images/1200/s41.jpg") }}" data-1024="{{ asset("images/1024/s41.jpg") }}"
+             data-960="{{ asset("images/960/s41.jpg") }}" data-768="{{ asset("images/768/s41.jpg") }}"
+             data-320="{{ asset("images/320/s41.jpg") }}" class="s41 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s41.jpg") }}" alt="" class="lazy-1200 s41 display-none"/>
+        <img data-original="{{ asset("images/1024/s41.jpg") }}" alt="" class="lazy-1024 s41 display-none"/>
+        <img data-original="{{ asset("images/960/s41.jpg") }}" alt="" class="lazy-960  s41 display-none"/>
+        <img data-original="{{ asset("images/768/s41.jpg") }}" alt="" class="lazy-768 s41 display-none"/>
+        <img data-original="{{ asset("images/320/s41.jpg") }}" alt="" class="lazy-320 s41 display-none"/>
+
+
+        {#<img src="" data-1200="{{ asset("images/1200/s42.png") }}" data-1024="{{ asset("images/1024/s42.png") }}"
+             data-960="{{ asset("images/960/s42.png") }}" data-768="{{ asset("images/768/s42.png") }}"
+             data-320="" class="s42 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s42.png") }}" alt="" class="lazy-1200 display-none"/>
+        <img data-original="{{ asset("images/1024/s42.png") }}" alt="" class="lazy-1024 display-none"/>
+        <img data-original="{{ asset("images/960/s42.png") }}" alt="" class="lazy-960 display-none"/>
+        <img data-original="{{ asset("images/768/s42.png") }}" alt="" class="lazy-768 display-none"/>
+
+
+        <div class="clear"></div>
+        <p class="just green f60">The real secret to getting a platinum body is in FLO FIT&rsquo;s PERFECT MIX of: </p>
+
+        <h3 class="white f40">Fluid, High Intensity Workouts + Optimal Nutrition</h3>
+
+        <p class="white">
+            <span class="blue">FLO FIT&rsquo;s dynamic series of</span> 30-minute High Intensity Resistance Training
+            (HIRT) workouts (starring the one-and-only Flo&nbsp;Rida, world-renowned fitness guru Mike Saffaie, and platinum
+            recording artist Natalie La Rose), <span class="blue">combined with a series of powerful</span> 10-minute
+            High Definition Express Workouts <span class="blue">allow you to:</span>
+        </p>
+    </div>
+    <div>
+        {#<img src="" data-1200="{{ asset("images/1200/s43.png") }}" data-1024="{{ asset("images/1024/s43.png") }}"
+             data-960="{{ asset("images/960/s43.png") }}" data-768="{{ asset("images/768/s43.png") }}"
+             data-320="" class="s43 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s43.png") }}" alt="" class="lazy-1200 s43 display-none"/>
+        <img data-original="{{ asset("images/1024/s43.png") }}" alt="" class="lazy-1024 s43 display-none"/>
+        <img data-original="{{ asset("images/960/s43.png") }}" alt="" class="lazy-960  s43 display-none"/>
+        <img data-original="{{ asset("images/768/s43.png") }}" alt="" class="lazy-768 s43 display-none"/>
+
+        {#<img src="" data-1200="{{ asset("images/1200/s44.png") }}" data-1024="{{ asset("images/1024/s44.png") }}"
+             data-960="{{ asset("images/960/s44.png") }}" data-768="{{ asset("images/768/s44.png") }}"
+             data-320="" class="s44 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s44.png") }}" alt="" class="lazy-1200 s44 display-none"/>
+        <img data-original="{{ asset("images/1024/s44.png") }}" alt="" class="lazy-1024 s44 display-none"/>
+        <img data-original="{{ asset("images/960/s44.png") }}" alt="" class="lazy-960  s44 display-none"/>
+        <img data-original="{{ asset("images/768/s44.png") }}" alt="" class="lazy-768 s44 display-none"/>
+    </div>
+    <div>
+        <ul>
+            <li><p class="blue f20"><span class="white f28">Follow FLO FIT&rsquo;s PERFECT MIX</span> of simple, pre-set
+                    workout
+                    schedules &amp; easy-to-follow nutrition guide to achieve outstanding results in just 8-weeks.</p>
+            </li>
+            <li><p class="blue f20"><span class="white f28">MASTER YOUR OWN MIX</span> with different workout
+                    combinations to achieve your personal goal, whether it&rsquo;s weight loss, toning or building
+                    muscle. Customize FLO FIT for YOUR needs&mdash;the look YOU want.
+                </p></li>
+            <li><p class="blue f20"><span class="white f28">FIX IT IN THE MIX.</span> Identify specific problem
+                    areas of your body (abs, arms, legs) that you want to improve then &mdash; Just like Flo and his
+                    crew in the sound studio &mdash; <span class="white f28">FIX IT IN THE MIX.</span></p></li>
+            <li><p class="blue f20"><span class="white f28">MIX IT UP WITH YOUR FRIENDS</span> - That&rsquo;s right.
+                    Inside the FLO FIT community, swap your perfect workout mixes with your friends for the ultimate in
+                    customization and <span class="white f28">NEVER ENDING</span> sequences!</p></li>
+        </ul>
+        {#<img src="" data-1200="{{ asset("images/1200/s45.png") }}" data-1024="{{ asset("images/1024/s45.png") }}"
+             data-960="{{ asset("images/960/s45.png") }}" data-768="{{ asset("images/768/s45.png") }}"
+             data-320="{{ asset("images/320/s45.png") }}" class="s45 lazy"/>#}
+
+        <p class="blue">&hellip;with FLO FIT you&rsquo;re going to have to <span class="white">BURN IT TO EARN IT</span>,
+            but if you commit you WILL see results that will take your personal fitness to a higher level than you
+            would&rsquo;ve ever thought possible.</p>
+    </div>
+    <div class="clear"></div>
+</div>
+{#<div class="container section-5">#}
+    {#<div>#}
+        {#<img data-original="{{ asset("images/1200/blue-down-arrow.png") }}" alt="" class="lazy-1200 down display-none"/>#}
+        {#<img data-original="{{ asset("images/1024/blue-down-arrow.png") }}" alt="" class="lazy-1024 down display-none"/>#}
+        {#<img data-original="{{ asset("images/960/blue-down-arrow.png") }}" alt="" class="lazy-960  down display-none"/>#}
+        {#<img data-original="{{ asset("images/768/blue-down-arrow.png") }}" alt="" class="lazy-768 down display-none"/>#}
+    {#</div>#}
+    {#<div>#}
+        {#<img data-original="{{ asset("images/1200/s51.png") }}" alt="" class="lazy-1200 s51 display-none"/>#}
+        {#<img data-original="{{ asset("images/1024/s51.png") }}" alt="" class="lazy-1024 s51 display-none"/>#}
+        {#<img data-original="{{ asset("images/960/s51.png") }}" alt="" class="lazy-960 s51 display-none"/>#}
+        {#<img data-original="{{ asset("images/768/s51.png") }}" alt="" class="lazy-768 s51 display-none"/>#}
+        {#<img data-original="{{ asset("images/768/s51.png") }}" alt="" class="lazy-320 s51 display-none"/>#}
+    {#</div>#}
+    {#<div>#}
+        {#<p class="just green f60">"You&rsquo;ll burn it and earn it, I guarantee it!"</p>#}
+
+        {#<p class="white f26">PLUS, you can feel confident with Flo Rida&rsquo;s PERSONAL GUARANTEE that after just#}
+            {#8-weeks#}
+            {#you&rsquo;ll see the amazing results you&rsquo;ve always wanted&hellip; OR YOUR MONEY BACK!</p>#}
+        {#<span class="no-risk">60-Day no risk<br/>money back!</span>#}
+    {#</div>#}
+    {#<div class="clear"></div>#}
+{#</div>#}
+<div class="container section-6 section-6-new">
+    {#<img src="" data-1200="{{ asset("images/1200/green-left-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-left-arrow.png") }}" data-960="{{ asset("images/960/green-left-arrow.png") }}"
+         data-768="{{ asset("images/768/green-left-arrow.png") }}" data-320=""
+         class="left lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-left-arrow.png") }}" alt="" class="lazy-1200 left display-none"/>
+    <img data-original="{{ asset("images/1024/green-left-arrow.png") }}" alt="" class="lazy-1024 left display-none"/>
+    <img data-original="{{ asset("images/960/green-left-arrow.png") }}" alt="" class="lazy-960 left display-none"/>
+    <img data-original="{{ asset("images/768/green-left-arrow.png") }}" alt="" class="lazy-768 left display-none"/>
+
+
+    {#<img src="" data-1200="{{ asset("images/1200/green-right-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-right-arrow.png") }}" data-960="{{ asset("images/960/green-right-arrow.png") }}"
+         data-768="{{ asset("images/768/green-right-arrow.png") }}" data-320=""
+         class="right lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-right-arrow.png") }}" alt="" class="lazy-1200 right display-none"/>
+    <img data-original="{{ asset("images/1024/green-right-arrow.png") }}" alt="" class="lazy-1024 right display-none"/>
+    <img data-original="{{ asset("images/960/green-right-arrow.png") }}" alt="" class="lazy-960 right display-none"/>
+    <img data-original="{{ asset("images/768/green-right-arrow.png") }}" alt="" class="lazy-768 right display-none"/>
+
+    <p class="just green f60">So are you ready to DISCOVER THE PERFECT MIX<br/>and get your platinum body? Only for
+        ${{ price }}
+    </p>
+    <a href="{{ link }}" class="btn-pill btn-blue btn-hover-orange f52 white" title="Order FLO FIT Platinum">GET ACCESS
+        NOW</a>
+</div>
+<div class="container section-7">
+    <div>
+        <h3 class="dark f36">Could it REALLY BE POSSIBLE to get in the best shape of your life in LESS THAN 30 MINUTES?
+            THE ANSWER IS YES&hellip;</h3>
+
+        <h3 class="dark f36">Now it&rsquo;s all possible with<br/><strong>THE PERFECT MIX</strong></h3>
+
+        <p class="dark f28">That&rsquo;s one part dynamic 30 minute high-intensity workout, one part customized
+            10-minute Hi Def Express workout, and one part proper nutrition.</p>
+    </div>
+</div>
+<div class="container section-7a">
+    <div class="section">
+        <ul class="bxslider">
+            <li>
+                <div class="photo circle">
+                    <img src="{{ asset("images/section-7a-oliver.png") }}" alt="Oliver"/>
+                    {#<img data-original="{{ asset("images/section-7a-oliver.png") }}" alt="Oliver" class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320"/>#}
+                </div>
+                <h3>Oliver Lost 20&nbsp;Pounds in 8&nbsp;Weeks</h3>
+                <p class="dark-blue">&ldquo;You won&rsquo;t believe how easy FLO&nbsp;FIT is to follow and how enjoyable
+                    the workouts are. I got results immediately and lost 20&nbsp;pounds during the 8&nbsp;week program.
+                    The workouts are all 30&nbsp;minutes or less, so I was always able to make time. Mike&nbsp;Saffaie
+                    will keep you motivated! He&rsquo;s an amazing trainer.&rdquo;</p>
+                <p><strong>OLIVER <span>&bull;</span></strong> 41&nbsp;years old Ladner, British Columbia, Canada</p>
+                <p><strong>RESULTS <span>&bull;</span></strong> Lost 20&nbsp;lbs. (192&nbsp;to&nbsp;172&nbsp;lbs.)</p>
+            </li>
+            <li>
+                <div class="photo circle">
+                    <img src="{{ asset("images/section-7a-steve.jpeg") }}" alt="Steve"/>
+                    {#<img data-original="{{ asset("images/section-7a-steve.png") }}" alt="Steve" class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320"/>#}
+                </div>
+                <h3>Steve Lost 15&nbsp;Pounds in 8&nbsp;Weeks</h3>
+                <p class="dark-blue">&ldquo;When I started the FLO&nbsp;FIT training program I was 185&nbsp;lbs. I&nbsp;am
+                    5&rsquo;9, had very little muscle definition, and had excess fat on my waistline, chest and arms.
+                    After 8&nbsp;weeks I was down to 170&nbsp;lbs. and had more upper body definition than ever. I&nbsp;truly
+                    believe in this program, it&rsquo;s one of the best purchases I&rsquo;ve ever made!&rdquo;</p>
+                <p><strong>STEVE <span>&bull;</span></strong> 27&nbsp;years old Philadelphia,&nbsp;PA</p>
+                <p><strong>RESULTS <span>&bull;</span></strong> Lost 15&nbsp;lbs. (185&nbsp;to&nbsp;170&nbsp;lbs.)</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container section-8">
+    {#<img src="" data-1200="{{ asset("images/1200/green-down-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-down-arrow.png") }}" data-960="{{ asset("images/960/green-down-arrow.png") }}"
+         data-768="{{ asset("images/768/green-down-arrow.png") }}" data-320=""
+         class="down lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-down-arrow.png") }}" alt="" class="lazy-1200 down display-none"/>
+    <img data-original="{{ asset("images/1024/green-down-arrow.png") }}" alt="" class="lazy-1024 down display-none"/>
+    <img data-original="{{ asset("images/960/green-down-arrow.png") }}" alt="" class="lazy-960 down display-none"/>
+    <img data-original="{{ asset("images/768/green-down-arrow.png") }}" alt="" class="lazy-768 down display-none"/>
+
+    <h2 class="white f36">EXACTLY HOW DOES FLO FIT MAKE ME LOOK GOOD FROM EVERY ANGLE?</h2>
+
+    <div class="item">
+        <span class="number">1</span>
+
+        <h3 class="white f52">METABOLIC RESISTANCE TRAINING</h3>
+
+        <p class="white">The Perfect Mix of high intensity strength training and interval cardio torches fat and builds
+            long, lean muscle. This type of training has been proven over and over to ignite your fat-burning metabolism
+            for DAYS following your workout.</p>
+
+        <div class="link">
+            {#<div class="white" data-id="toggle1"><span class="text">What is HIRT training?</span></div>#}
+
+            <div class="toggle" id="toggle1">
+                {#<img src="" data-1200="{{ asset("images/1200/HIT-training.jpg") }}"
+                     data-1024="{{ asset("images/1024/HIT-training.jpg") }}" data-960="{{ asset("images/960/HIT-training.jpg") }}"
+                     data-768="{{ asset("images/768/HIT-training.jpg") }}" data-320="{{ asset("images/320/HIT-training.jpg") }}"
+                     class="s81 lazy"/>#}
+                <img data-original="{{ asset("images/1200/HIT-training.jpg") }}" alt="" class="lazy-1200 s81 display-none"/>
+                <img data-original="{{ asset("images/1024/HIT-training.jpg") }}" alt="" class="lazy-1024 s81 display-none"/>
+                <img data-original="{{ asset("images/960/HIT-training.jpg") }}" alt="" class="lazy-960 s81 display-none"/>
+                <img data-original="{{ asset("images/768/HIT-training.jpg") }}" alt="" class="lazy-768 s81 display-none"/>
+                <img data-original="{{ asset("images/320/HIT-training.jpg") }}" alt="" class="lazy-320 s81 display-none"/>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <span class="number">2</span>
+
+        <h3 class="white f52">The LADDER PRINCIPLE<br/><span class="f40">~ Extends the Afterburn ~</span></h3>
+
+        <p class="white">The Afterburn Effect is basically the amount your body has to &ldquo;catch up&rdquo; after a
+            workout. When it &ldquo;catches up,&rdquo; your metabolism goes back to normal. That&rsquo;s why the more it
+            has to &ldquo;catch up&rdquo;, the higher your metabolism revs, and for LONGER. Because the LADDER PRINCIPLE
+            works your ENTIRE body, up and down, you&rsquo;ll enjoy around the clock fat burning for up to 72 HOURS
+            after your workout.</p>
+
+        <div class="link">
+            {#<div class="white" data-id="toggle2"><span class="text">What is The Ladder Principle?</span></div>#}
+
+            <div class="toggle" id="toggle2">
+                {#<img src="" data-1200="{{ asset("images/1200/s82.jpg") }}" data-1024="{{ asset("images/1024/s82.jpg") }}"
+                     data-960="{{ asset("images/960/s82.jpg") }}" data-768="{{ asset("images/768/s82.jpg") }}"
+                     data-320="{{ asset("images/320/s82.jpg") }}" class="s82 lazy"/>#}
+                <img data-original="{{ asset("images/1200/s82.jpg") }}" alt="" class="lazy-1200 s82 display-none"/>
+                <img data-original="{{ asset("images/1024/s82.jpg") }}" alt="" class="lazy-1024 s82 display-none"/>
+                <img data-original="{{ asset("images/960/s82.jpg") }}" alt="" class="lazy-960 s82 display-none"/>
+                <img data-original="{{ asset("images/768/s82.jpg") }}" alt="" class="lazy-768 s82 display-none"/>
+                <img data-original="{{ asset("images/320/s82.jpg") }}" alt="" class="lazy-320 s82 display-none"/>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <span class="number">3</span>
+
+        <h3 class="white f52">High Def Iso Training</h3>
+
+        <p class="white">Every body is a unique as a snowflake. Including yours. That&rsquo;s why Mike created specific
+            targeting training to firm up those weaker areas&mdash;so you&rsquo;ll love what you see in the mirror
+            again. Just grab one and go!</p>
+
+        <div class="link">
+            {#<div class="white" data-id="toggle3"><span class="text">What is High Def ISO training?</span></div>#}
+
+            <div class="toggle" id="toggle3">
+                {#<img src="" data-1200="{{ asset("images/1200/s83.jpg") }}" data-1024="{{ asset("images/1024/s83.jpg") }}"
+                     data-960="{{ asset("images/960/s83.jpg") }}" data-768="{{ asset("images/768/s83.jpg") }}"
+                     data-320="{{ asset("images/320/s83.jpg") }}" class="s83 lazy"/>#}
+                <img data-original="{{ asset("images/1200/s83.jpg") }}" alt="" class="lazy-1200 s83 display-none"/>
+                <img data-original="{{ asset("images/1024/s83.jpg") }}" alt="" class="lazy-1024 s83 display-none"/>
+                <img data-original="{{ asset("images/960/s83.jpg") }}" alt="" class="lazy-960 s83 display-none"/>
+                <img data-original="{{ asset("images/768/s83.jpg") }}" alt="" class="lazy-768 s83 display-none"/>
+                <img data-original="{{ asset("images/320/s83.jpg") }}" alt="" class="lazy-320 s83 display-none"/>
+            </div>
+        </div>
+    </div>
+    {#<div class="item">#}
+        {#<span class="number">4</span>#}
+
+        {#<h3 class="white f52">Nutrition</h3>#}
+
+        {#<p class="white">Abs are made in the kitchen. With your new extensive yet simple nutrition guide, you&rsquo;ll#}
+            {#fuel your workouts with easy, effective, delicious meals that stoke your fat burning furnace, boost your#}
+            {#metabolism, and turn you into a high output producer, just like FLO RIDA! The right foods enhance your look,#}
+            {#fire up fat burning, nourish, and, just as importantly, are delicious!</p>#}
+        {#<img data-original="{{ asset("images/960/healthy-food-2.jpg") }}" alt="Healthy food"#}
+             {#class="lazy-1200 lazy-1024 lazy-960 margin-auto display-none"/>#}
+        {#<img data-original="{{ asset("images/768/healthy-food-2.jpg") }}" alt="Healthy food"#}
+             {#class="lazy-768 margin-auto display-none"/>#}
+        {#<img data-original="{{ asset("images/320/healthy-food-2.jpg") }}" alt="Healthy food"#}
+             {#class="lazy-320 margin-auto display-none"/>#}
+    {#</div>#}
+</div>
+<div class="container section-9 section-6 section-6-plain">
+    {#<img src="" data-1200="{{ asset("images/1200/green-left-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-left-arrow.png") }}" data-960="{{ asset("images/960/green-left-arrow.png") }}"
+         data-768="{{ asset("images/768/green-left-arrow.png") }}" data-320=""
+         class="left lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-left-arrow.png") }}" alt="" class="lazy-1200 left display-none"/>
+    <img data-original="{{ asset("images/1024/green-left-arrow.png") }}" alt="" class="lazy-1024 left display-none"/>
+    <img data-original="{{ asset("images/960/green-left-arrow.png") }}" alt="" class="lazy-960 left display-none"/>
+    <img data-original="{{ asset("images/768/green-left-arrow.png") }}" alt="" class="lazy-768 left display-none"/>
+
+    {#<img src="" data-1200="{{ asset("images/1200/green-right-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-right-arrow.png") }}" data-960="{{ asset("images/960/green-right-arrow.png") }}"
+         data-768="{{ asset("images/768/green-right-arrow.png") }}" data-320=""
+         class="right lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-right-arrow.png") }}" alt="" class="lazy-1200 right display-none"/>
+    <img data-original="{{ asset("images/1024/green-right-arrow.png") }}" alt="" class="lazy-1024 right display-none"/>
+    <img data-original="{{ asset("images/960/green-right-arrow.png") }}" alt="" class="lazy-960 right display-none"/>
+    <img data-original="{{ asset("images/768/green-right-arrow.png") }}" alt="" class="lazy-768 right display-none"/>
+
+
+    <div class="first">
+        {#<img src="" data-1200="{{ asset("images/1200/s91.png") }}" data-1024="{{ asset("images/1024/s91.png") }}"
+                            data-960="{{ asset("images/960/s91.png") }}" data-768="{{ asset("images/768/s91.png") }}"
+                            data-320="{{ asset("images/320/s91.png") }}" class="s91 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s91.png") }}" alt="" class="lazy-1200 s91 display-none"/>
+        <img data-original="{{ asset("images/1024/s91.png") }}" alt="" class="lazy-1024 s91 display-none"/>
+        <img data-original="{{ asset("images/960/s91.png") }}" alt="" class="lazy-960 s91 display-none"/>
+        <img data-original="{{ asset("images/768/s91.png") }}" alt="" class="lazy-768 s91 display-none"/>
+        <img data-original="{{ asset("images/320/s91.png") }}" alt="" class="lazy-320 s91 display-none"/>
+
+    </div>
+    {#<img src="" data-1200="{{ asset("images/1200/s92.png") }}" data-1024="{{ asset("images/1024/s92.png") }}"#}
+    {#data-960="{{ asset("images/960/s92.png") }}" data-768="{{ asset("images/768/s92.png") }}"#}
+    {#data-320="" class="s92 lazy"/>#}
+    <img data-original="{{ asset("images/1200/s92.png") }}" alt="" class="lazy-1200 s92 display-none"/>
+    <img data-original="{{ asset("images/1024/s92.png") }}" alt="" class="lazy-1024 s92 display-none"/>
+    <img data-original="{{ asset("images/960/s92.png") }}" alt="" class="lazy-960 s92 display-none"/>
+    <img data-original="{{ asset("images/768/s92.png") }}" alt="" class="lazy-768 s92 display-none"/>
+
+
+    <div class="second">
+        <h2 class="white f60">TAKE A BETTER SELFIE&hellip; GUARANTEED</h2>
+
+        {#<p class="white f36">And never worry about the iPhone paparazzi AGAIN!</p>#}
+        <p class="white f28">Hate it when people take your photo&mdash;and even POST it on Facebook, Instagram or some
+            other social media?
+            Now you don&rsquo;t have to ever worry about the iPhone paparazzi AGAIN! Because you&rsquo;ll be ready for
+            your closeup 24/7.</p>
+    </div>
+</div>
+<div class="container section-10a">
+    <div>
+        <h2 class="dark f52">PLAY FLO&nbsp;FIT WORKOUT VIDEOS FROM YOUR COMPUTER, TABLET OR PHONE</h2>
+        <p class="white">The FLO&nbsp;FIT workout videos can be streamed on your TV, computer, tablet, or mobile phone,
+            providing the ultimate flexibility and convenience. All you have to do is log in to your FLO&nbsp;FIT account and
+            all of the workouts and books are accessible in digital format. If you also want FLO&nbsp;FIT DVDs and
+            traditional books, just let us know and we’ll ship them to you. </p>
+        {#<img src="" data-1200="{{ asset("images/1200/flofit-devices.png") }}" data-1024="{{ asset("images/1024/flofit-devices.png") }}"
+                         data-960="{{ asset("images/960/flofit-devices.png") }}" data-768="{{ asset("images/768/flofit-devices.png") }}"
+                         data-320="{{ asset("images/320/flofit-devices.png") }}" alt="Flo Fit website devices" class="img-responsive margin-auto lazy"/>#}
+        <img data-original="{{ asset("images/1200/flofit-devices.png") }}" alt="Flo Fit website devices"
+             class="lazy-1200 img-responsive margin-auto display-none"/>
+        <img data-original="{{ asset("images/1024/flofit-devices.png") }}" alt="Flo Fit website devices"
+             class="lazy-1024 img-responsive margin-auto display-none"/>
+        <img data-original="{{ asset("images/960/flofit-devices.png") }}" alt="Flo Fit website devices"
+             class="lazy-960 img-responsive margin-auto display-none"/>
+        <img data-original="{{ asset("images/768/flofit-devices.png") }}" alt="Flo Fit website devices"
+             class="lazy-768 img-responsive margin-auto display-none"/>
+        <img data-original="{{ asset("images/320/flofit-devices.png") }}" alt="Flo Fit website devices"
+             class="lazy-320 img-responsive margin-auto display-none"/>
+    </div>
+</div>
+<div class="container section-10b">
+    <div class="mobile-app">
+        <h2>Get the FREE App to Access FLO&nbsp;FIT
+            <small>On Your Phone or Tablet</small>
+        </h2>
+        <div class="download-app">
+            <a class="android" href="https://play.google.com/store/apps/details?id=com.digitalshelfspace.flofit">
+                <img data-original="{{ asset("images/ff-fe-dash-mobile-app-android.png") }}" alt="android app"
+                     class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>
+            </a>
+            <a class="apple" href="https://itunes.apple.com/cz/app/flo-fit/id1052231777">
+                <img data-original="{{ asset("images/ff-fe-dash-mobile-app-apple.png") }}" alt="apple app"
+                     class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>
+            </a>
+        </div>
+    </div>
+</div>
+{#<div class="container section-10">#}
+{#<div>#}
+{#<h2 class="dark f52">HOW DO WE KNOW THIS MIX REALLY WORKS?</h2>#}
+
+{#<p class="dark f36">Just ask <strong>Flo&nbsp;Rida</strong>. He&rsquo;s the living proof of <strong>FLO&nbsp;FIT&rsquo;s</strong>#}
+{#fast, uncompromising results.</p>#}
+{#</div>#}
+{#<div>#}
+{#<img src="" data-1200="{{ asset("images/1200/s101.jpg") }}" data-1024="{{ asset("images/1024/s101.jpg") }}"#}
+{#data-960="{{ asset("images/960/s101.jpg") }}" data-768="{{ asset("images/768/s101.jpg") }}"#}
+{#data-320="{{ asset("images/320/s101.jpg") }}" class="s101 lazy"/>#}
+{#</div>#}
+{#<div>#}
+{#<p class="just f52">"I really didn&rsquo;t know I could feel this good or look this lean until I met Mike. He#}
+{#changed my whole view on working out. <br/><span class="red">I had muscle before, but he&rsquo;s got the secret to getting lean.</span>"#}
+{#</p>#}
+{#<img src="" data-1200="{{ asset("images/1200/s32.png") }}" data-1024="{{ asset("images/1024/s32.png") }}"#}
+{#data-960="{{ asset("images/960/s32.png") }}" data-768="{{ asset("images/768/s32.png") }}"#}
+{#data-320="{{ asset("images/320/s32.png") }}" class="s32 lazy"/>#}
+{#</div>#}
+{#<div class="clear"></div>#}
+{#</div>#}
+<div class="container section-11">
+    <div>
+        <h2 class="white f52">Who&rsquo;s Mike?</h2>
+
+        <p class="white">Mike is a world-class professional fitness trainer with over 16 years of experience
+            changing people&rsquo;s lives one workout at a time. His incredible expertise, combined with both a
+            down-to-earth,
+            ultra-positive attitude and a focus on relentless effort and results-oriented training, have made him
+            one of the most highly respected personal trainers in the industry. Just ask Flo&hellip;</p>
+    </div>
+    <div>
+        {#<img src="" data-1200="{{ asset("images/1200/s111.png") }}" data-1024="{{ asset("images/1024/s111.png") }}"
+             data-960="{{ asset("images/960/s111.png") }}" data-768="{{ asset("images/768/s111.png") }}"
+             data-320="{{ asset("images/320/s111.png") }}" class="s111 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s111.png") }}" alt="" class="lazy-1200 s111 display-none"/>
+        <img data-original="{{ asset("images/1024/s111.png") }}" alt="" class="lazy-1024 s111 display-none"/>
+        <img data-original="{{ asset("images/960/s111.png") }}" alt="" class="lazy-960 s111 display-none"/>
+        <img data-original="{{ asset("images/768/s111.png") }}" alt="" class="lazy-768 s111 display-none"/>
+        <img data-original="{{ asset("images/320/s111.png") }}" alt="" class="lazy-320 s111 display-none"/>
+    </div>
+    <div class="clear"></div>
+    <p class="just white f44">"Think about it. I&rsquo;m a guy who&rsquo;s always been known for my fitness, and now
+        people are
+        asking me what I did to look and perform even better than before! That&rsquo;s all thanks to main man
+        Mike!" <span
+                class="f28">&mdash;Flo&nbsp;Rida</span></p>
+</div>
+<div class="container section-12 section-6 section-6-plain">
+    {# <img src="" data-1200="{{ asset("images/1200/green-left-arrow.png") }}"
+          data-1024="{{ asset("images/1024/green-left-arrow.png") }}" data-960="{{ asset("images/960/green-left-arrow.png") }}"
+          data-768="{{ asset("images/768/green-left-arrow.png") }}" data-320=""
+          class="left lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-left-arrow.png") }}" alt="" class="lazy-1200 left display-none"/>
+    <img data-original="{{ asset("images/1024/green-left-arrow.png") }}" alt="" class="lazy-1024 left display-none"/>
+    <img data-original="{{ asset("images/960/green-left-arrow.png") }}" alt="" class="lazy-960 left display-none"/>
+    <img data-original="{{ asset("images/768/green-left-arrow.png") }}" alt="" class="lazy-768 left display-none"/>
+
+
+    {#<img src="" data-1200="{{ asset("images/1200/green-right-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-right-arrow.png") }}" data-960="{{ asset("images/960/green-right-arrow.png") }}"
+         data-768="{{ asset("images/768/green-right-arrow.png") }}" data-320=""
+         class="right lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-right-arrow.png") }}" alt="" class="lazy-1200 right display-none"/>
+    <img data-original="{{ asset("images/1024/green-right-arrow.png") }}" alt="" class="lazy-1024 right display-none"/>
+    <img data-original="{{ asset("images/960/green-right-arrow.png") }}" alt="" class="lazy-960 right display-none"/>
+    <img data-original="{{ asset("images/768/green-right-arrow.png") }}" alt="" class="lazy-768 right display-none"/>
+
+    <div>
+        <h2 class="white f48">SO WHAT&rsquo;S THE SECRET METHOD MIKE SAFFAIE USES TO KEEP FLO&nbsp;RIDA IN THE BEST SHAPE OF
+            HIS LIFE?</h2>
+
+        <h2 class="white f48"><span class="f36">By now you already know the answer&hellip;</span><br/>HIS SECRET IS
+            THE PERFECT MIX</h2>
+        <h2 style="color: #FFFFFF;font-size: 67px;padding-bottom: 0;">${{ price }}</h2>
+    </div>
+    <a href="{{ link }}" class="btn-pill btn-blue btn-hover-orange f52 white" title="Order FLO FIT Platinum">Yes!
+        Order Now!</a>
+</div>
+<div class="container section-14">
+    <h2 class="white f52">HERE&rsquo;S WHAT YOU GET</h2>
+
+    {#<div>#}
+        {#<img data-original="{{ asset("images/1200/s141.png") }}" alt="" class="lazy-1200 s141 display-none"/>#}
+        {#<img data-original="{{ asset("images/1024/s141.png") }}" alt="" class="lazy-1024 s141 display-none"/>#}
+        {#<img data-original="{{ asset("images/960/s141.png") }}" alt="" class="lazy-960 s141 display-none"/>#}
+        {#<img data-original="{{ asset("images/768/s141.png") }}" alt="" class="lazy-768 s141 display-none"/>#}
+        {#<img data-original="{{ asset("images/320/s141.png") }}" alt="" class="lazy-320 s141 display-none"/>#}
+
+        {#<h3 class="white f26"> The FLO FIT 8-Week Workout Program</h3>#}
+
+        {#<p class="white f18" style="font-size: 16px">#}
+            {#<span class="f16">- INCLUDES -</span><br/>#}
+            {#8 Weeks of Full Length On Demand Workout Videos<br/>#}
+            {#+ Complete Workout Guide Book<br/>#}
+            {#+ Beginner, Intermediate, and Advanced 8-Week Training Calendars<br/>#}
+            {#+ Special Bonus Full-Body Conditioning Extreme Workout Video<br/>#}
+            {#+ Special Bonus Warm-Up and Cool-Down Videos <br/>#}
+            {#(for those who like to spend a little extra time warming up and/or cooling down)<br/>#}
+            {#+ Membership to the Exclusive FLO FIT Community<br/>#}
+            {#+ The Ability to Stream Digital FLO FIT Workouts On TV, Mobile Devices, Tablets, or Computer<br/>#}
+            {#+ FLO FIT Discussions Forums For Advice From Fellow FLO FITTERS As Well as Mike and FLO RIDA<br/>#}
+            {#+ Special Bonus Online Resources and Tools<br/>#}
+            {#+ Extensive Nutrition Guide Book Tells You What To Eat – And What Not To Eat<br/>#}
+            {#<span class="f16">- And MUCH MORE! -</span>#}
+        {#</p>#}
+    {#</div>#}
+    {#<div class="clear"></div>#}
+    <div class="workout">
+        {#<div class="workout-row workout-row-1">#}
+            {#<div class="workout-item workout-item-1">#}
+                {#<img data-original="{{ asset("images/workout/FullBodyDefinition.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>Workout 1<br/>Full Body Definition<br/>30 mins</h4>#}
+
+                {#<p>Blast your entire body with this high intensity full body circuit training specially designed to#}
+                    {#destroy#}
+                    {#fat. </p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-2">#}
+                {#<img data-original="{{ asset("images/workout/LowerBodyDefinition.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>Workout 2<br/>Lower Body Definition<br/>30 mins</h4>#}
+
+                {#<p>Get ready to burn it to earn it in this intense lower body workout. If your legs aren&rsquo;t burning#}
+                    {#after this one you&rsquo;re doing it wrong! </p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-3">#}
+                {#<img data-original="{{ asset("images/workout/FullBodyExplosivePower.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>Workout 3<br/>Full Body Explosive Power<br/>30 mins</h4>#}
+
+                {#<p>Get ready to explode! This is the workout that keeps Flo Rida jumping higher than anyone else#}
+                    {#throughout his entire show. </p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-1">#}
+                {#<img data-original="{{ asset("images/workout/ArmDefinition.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>Workout 4<br/>Arm Definition<br/>30 mins</h4>#}
+
+                {#<p>Build long lean muscular arms while also destroying fat in this arm focused workout. </p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-2">#}
+                {#<img data-original="{{ asset("images/workout/CoreDefinition.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>Workout 5<br/>Core Definition<br/>30 mins</h4>#}
+
+                {#<p>Abs are the best accessory, but your core is more than just your abs. This workout focuses on your#}
+                    {#whole core to get you that 6-pack you&rsquo;ve been looking for. </p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-3">#}
+                {#<img data-original="{{ asset("images/workout/FullBodyConditioningXtreme1.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>BONUS WORKOUT<br/>Full Body Conditioning Extreme<br/>30 mins</h4>#}
+
+                {#<p>Push your conditioning to the max as you work your way up and down the ladder in this intense#}
+                    {#full body circuit. </p>#}
+            {#</div>#}
+        {#</div>#}
+        {#<h2>HIGH DEF EXPRESS WORKOUTS</h2>#}
+
+        {#<p class="workout">One of the reasons FLO FIT works so much better than any other program is the addition of#}
+            {#the High Definition Express Workouts. These body part specific workouts help you bring out all areas of#}
+            {#your body, to make sure that you look good from every angle. </p>#}
+
+        {#<div class="workout-row workout-row-2">#}
+            {#<div class="workout-item workout-item-1">#}
+                {#<img data-original="{{ asset("images/workout/HiDefChestandBack.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>High Def Express for Chest<br/>and Back</h4>#}
+
+                {#<p>Here&rsquo;s where you&rsquo;ll build a well-defined, balanced chest and back by focusing on them#}
+                    {#exclusively.</p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-2">#}
+                {#<img data-original="{{ asset("images/workout/HiDefArms.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>High Def Express for Arms</h4>#}
+
+                {#<p>Rip those sleeves and get ready to have envious arms with the FLO FIT High Def Express for#}
+                    {#arms.</p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-3">#}
+                {#<img data-original="{{ asset("images/workout/HiDefShoulders.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>High Def Express for Shoulders</h4>#}
+
+                {#<p>Build killer shoulders that will turn heads from the club to the beach with this 10 minute#}
+                    {#shoulder blast. </p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-4">#}
+                {#<img data-original="{{ asset("images/workout/HiDefAbs.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>High Def Express for Abs</h4>#}
+
+                {#<p>We all know this is what everyone wants, that great 6-pack. Because we&rsquo;ll build up not just#}
+                    {#your abs but your whole core!</p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-5">#}
+                {#<img data-original="{{ asset("images/workout/HiDefLowerBody.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>High Def Express for Lower Body</h4>#}
+
+                {#<p>Want that killer butt and beautiful legs? Then get ready to earn it in this 10 minute lower body#}
+                    {#attack! </p>#}
+            {#</div>#}
+            {#<div class="workout-item workout-item-6">#}
+                {#<img data-original="{{ asset("images/workout/warmup.png") }}"#}
+                     {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                {#<h4>BONUS Warm Up And Stretch</h4>#}
+
+                {#<p>As an added bonus we&rsquo;ve included a 10 minute warm up and a 10 minute stretch workout to help#}
+                    {#you#}
+                    {#get the most out of your workouts and recovery. </p>#}
+            {#</div>#}
+        {#</div>#}
+        <div class="what-you-get">
+            {#<div class="row">#}
+                {#<img data-original="{{ asset("images/1200/all-covers.jpg") }}" alt="" class="lazy-1200 display-none"/>#}
+                {#<img data-original="{{ asset("images/1024/all-covers.jpg") }}" alt="" class="lazy-1024 display-none"/>#}
+                {#<img data-original="{{ asset("images/960/all-covers.jpg") }}" alt="" class="lazy-960 display-none"/>#}
+                {#<img data-original="{{ asset("images/768/all-covers.jpg") }}" alt="" class="lazy-768 display-none"/>#}
+                {#<img data-original="{{ asset("images/320/all-covers.jpg") }}" alt="" class="lazy-320 display-none"/>#}
+            {#</div>#}
+            {#<div class="row">#}
+                {#<span>AVAILABLE IMMEDIATELY</span>#}
+                {#<div class="download-app">#}
+                    {#<a class="android" href="https://play.google.com/store/apps/details?id=com.digitalshelfspace.flofit">#}
+                        {#<img data-original="{{ asset("images/ff-fe-dash-mobile-app-android.png") }}" alt="android app"#}
+                             {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                    {#</a>#}
+                    {#<a class="apple" href="https://itunes.apple.com/cz/app/flo-fit/id1052231777">#}
+                        {#<img data-original="{{ asset("images/ff-fe-dash-mobile-app-apple.png") }}" alt="apple app"#}
+                             {#class="lazy-1200 lazy-1024 lazy-960 lazy-768 lazy-320 display-none"/>#}
+                    {#</a>#}
+                {#</div>#}
+            {#</div>#}
+            <div class="video-box">
+                <div id="video-aviable-immediately"></div>
+            </div>
+        </div>
+
+        {#<h2>FLO FIT COMMUNITY AND FORUMS</h2>#}
+        {#<p class="p-18">The FLO FIT community Forum is the place to get advice, support and encouragement and to connect#}
+            {#with other people. Whether it&rsquo;s your first day or you&rsquo;ve completed FLO FIT many times, the Forum#}
+            {#has everything you need. Share your goals, photos, knowledge and achievements and then cheer on others as#}
+            {#they follow the same path.</p>#}
+        {#<div class="row">#}
+            {#<img data-original="{{ asset("images/1200/ff-community-new.png") }}" alt="" class="lazy-1200 display-none"/>#}
+            {#<img data-original="{{ asset("images/1024/ff-community-new.png") }}" alt="" class="lazy-1024 display-none"/>#}
+            {#<img data-original="{{ asset("images/960/ff-community-new.png") }}" alt="" class="lazy-960 display-none"/>#}
+            {#<img data-original="{{ asset("images/768/ff-community-new.png") }}" alt="" class="lazy-768 display-none"/>#}
+            {#<img data-original="{{ asset("images/320/ff-community-new.png") }}" alt="" class="lazy-320 display-none"/>#}
+        {#</div>#}
+
+        {#<div class="workout-row workout-row-3">
+            <div class="workout-item workout-item-1">
+                <img src="{{ asset("images/workout/IsoExplode.png") }}"/>
+                <h4>Platinum Workout 1<br/>ISO Explode<br/>Approx 30 minutes</h4>
+
+                <p>Get the perfect mix of isometric holds and explosive movements done in rapid succession to
+                    challenge yourself like never before! </p>
+            </div>
+            <div class="workout-item workout-item-2">
+                <img src="{{ asset("images/workout/UpperBodyDefinition.png") }}"/>
+                <h4>Platinum Workout 2<br/>Upper Body Definition<br/>Approx 30 minutes</h4>
+
+                <p>Perfect your beach muscles while torching fat with this high intensity workout that combines
+                    strength training and cardio.</p>
+            </div>
+        </div>#}
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="container section-13">
+    <div>
+        <h2 class="dark f48">WHAT&rsquo;S YOUR EXCUSE?</h2>
+
+        <p class="dark"><strong class="f36">I DON&rsquo;T HAVE TIME.</strong><br/>
+            FLO&nbsp;RIDA is one of the busiest men on the planet, performing around the world, recording in the
+            studio, running his record label and being the life of the party. That&rsquo;s why FLO&nbsp;FIT has been designed
+            to be done ANYWHERE and give you the best results in the shortest time </p>
+
+        <p class="dark"><strong class="f36">I DON&rsquo;T KNOW WHAT TO DO.</strong><br/>If you&rsquo;re new to working
+            out, or have worked out for years and hit a plateau&mdash;it doesn&rsquo;t matter! Using FLO&nbsp;FIT is just
+            like having Mike right there, coaching you through every step of the way. All high level achievers have
+            coaches… and YOU SHOULD TOO! So you&rsquo;ll never worry about what to do or if you&rsquo;re eating the
+            wrong things. With FLO&nbsp;FIT, once you start, it&rsquo;s like &ldquo;set it and forget it&rdquo;&hellip;</p>
+
+        <p class="dark"><strong class="f36">I DON&rsquo;T HAVE THE MOTIVATION.</strong><br/>
+            NO PROBLEM! Just follow the 5&mdash;minute rule&hellip;<br/>
+            Flip on a FLO&nbsp;FIT video for just 5 minutes and motivation will NEVER be your issue. You can&rsquo;t help but
+            soak in the energy that Mike and FLO&nbsp;RIDA bring to your screen. In fact, on the days you feel lower energy,
+            just follow this 5&mdash;minute rule every time and watch your energy levels change.<br/>
+            Even better, hit a FLO&nbsp;FIT workout first thing in the morning for an INSTANT BOOST of youthful energy and
+            motivation that will carry you through the entire day. NO CAFFEINE REQUIRED.</p>
+    </div>
+    <div>
+        {# <img src="" data-1200="{{ asset("images/1200/s131.jpg") }}" data-1024="{{ asset("images/1024/s131.png") }}"
+              data-960="{{ asset("images/960/s131.png") }}" data-768="{{ asset("images/768/s131.png") }}"
+              data-320="{{ asset("images/320/s131.jpg") }}" class="s131 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s131.jpg") }}" alt="" class="lazy-1200 s131 display-none"/>
+        <img data-original="{{ asset("images/1024/s131.png") }}" alt="" class="lazy-1024 s131 display-none"/>
+        <img data-original="{{ asset("images/960/s131.png") }}" alt="" class="lazy-960 s131 display-none"/>
+        <img data-original="{{ asset("images/768/s131.png") }}" alt="" class="lazy-768 s131 display-none"/>
+        <img data-original="{{ asset("images/320/s131.jpg") }}" alt="" class="lazy-320 s131 display-none"/>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="container section-15 section-5">
+    <div>
+        {#<img src="" data-1200="{{ asset("images/1200/green-down-arrow.png") }}"
+             data-1024="{{ asset("images/1024/green-down-arrow.png") }}"
+             data-960="{{ asset("images/960/green-down-arrow.png") }}"
+             data-768="{{ asset("images/768/green-down-arrow.png") }}" data-320=""
+             class="down lazy"/>#}
+        <img data-original="{{ asset("images/1200/green-down-arrow.png") }}" alt="" class="lazy-1200 down display-none"/>
+        <img data-original="{{ asset("images/1024/green-down-arrow.png") }}" alt="" class="lazy-1024 down display-none"/>
+        <img data-original="{{ asset("images/960/green-down-arrow.png") }}" alt="" class="lazy-960 down display-none"/>
+        <img data-original="{{ asset("images/768/green-down-arrow.png") }}" alt="" class="lazy-768 down display-none"/>
+
+    </div>
+    <div>
+        {#<img src="" data-1200="{{ asset("images/1200/s51.png") }}" data-1024="{{ asset("images/1024/s51.png") }}"
+             data-960="{{ asset("images/960/s51.png") }}" data-768="{{ asset("images/768/s51.png") }}"
+             data-320="{{ asset("images/320/s51.png") }}" class="s51 lazy"/>#}
+        <img data-original="{{ asset("images/1200/s51.png") }}" alt="" class="lazy-1200 s51 display-none"/>
+        <img data-original="{{ asset("images/1024/s51.png") }}" alt="" class="lazy-1024 s51 display-none"/>
+        <img data-original="{{ asset("images/960/s51.png") }}" alt="" class="lazy-960 s51 display-none"/>
+        <img data-original="{{ asset("images/768/s51.png") }}" alt="" class="lazy-768 s51 display-none"/>
+        <img data-original="{{ asset("images/320/s51.png") }}" alt="" class="lazy-320 s51 display-none"/>
+    </div>
+    <div>
+        <p class="just green f60">"You&rsquo;ll burn it to earn it, I guarantee it!"</p>
+
+        <p class="white f26">PLUS, you can feel confident with Flo&nbsp;Rida&rsquo;s PERSONAL GUARANTEE that after just
+            8-weeks
+            you&rsquo;ll be able to achieve the amazing results you&rsquo;ve always wanted&hellip; OR YOUR MONEY
+            BACK!</p>
+        {#<img src="" data-1200="{{ asset("images/1200/s52.jpg") }}" data-1024="{{ asset("images/1024/s52.jpg") }}"#}
+        {#data-960="{{ asset("images/960/s52.jpg") }}" data-768="{{ asset("images/768/s52.jpg") }}"#}
+        {#data-320="{{ asset("images/320/s52.jpg") }}" class="s52 lazy"/>#}
+        <span class="no-risk">60-Day no risk<br/>money back!</span>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="container section-16 section-6" style="background-image:none">
+    {#<img src="" data-1200="{{ asset("images/1200/green-left-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-left-arrow.png") }}" data-960="{{ asset("images/960/green-left-arrow.png") }}"
+         data-768="{{ asset("images/768/green-left-arrow.png") }}" data-320=""
+         class="left lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-left-arrow.png") }}" alt="" class="lazy-1200 left display-none"/>
+    <img data-original="{{ asset("images/1024/green-left-arrow.png") }}" alt="" class="lazy-1024 left display-none"/>
+    <img data-original="{{ asset("images/960/green-left-arrow.png") }}" alt="" class="lazy-960 left display-none"/>
+    <img data-original="{{ asset("images/768/green-left-arrow.png") }}" alt="" class="lazy-768 left display-none"/>
+
+
+    {#<img src="" data-1200="{{ asset("images/1200/green-right-arrow.png") }}"
+         data-1024="{{ asset("images/1024/green-right-arrow.png") }}" data-960="{{ asset("images/960/green-right-arrow.png") }}"
+         data-768="{{ asset("images/768/green-right-arrow.png") }}" data-320=""
+         class="right lazy"/>#}
+    <img data-original="{{ asset("images/1200/green-right-arrow.png") }}" alt="" class="lazy-1200 right display-none"/>
+    <img data-original="{{ asset("images/1024/green-right-arrow.png") }}" alt="" class="lazy-1024 right display-none"/>
+    <img data-original="{{ asset("images/960/green-right-arrow.png") }}" alt="" class="lazy-960 right display-none"/>
+    <img data-original="{{ asset("images/768/green-right-arrow.png") }}" alt="" class="lazy-768 right display-none"/>
+
+    <p class="just green f60">So are you ready to master the PERFECT MIX<br/> and get your platinum body?</p>
+    <h2 style="color: #FFFFFF;font-size: 67px;padding-bottom: 0;">${{ price }}</h2>
+    <a href="{{ link }}" class="btn-pill btn-blue btn-hover-orange f52 white" title="Order FLO FIT Platinum">Yes!
+        Order Now!</a>
+</div>
+</div>
+{#<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>#}
+{#<script>#}
+{#wistiaEmbed = Wistia.embed("57zzu0ykkg", {#}
+{#videoFoam: true,#}
+{#plugin: {#}
+{#googleAnalytics: {#}
+{#src: "http://fast.wistia.com/labs/google-analytics/plugin.js"#}
+{#}#}
+{#}#}
+{#});#}
+{#</script>#}
+<footer>
+    <nav class="footer-social">
+        {#
+                <ul>
+                    <li><a href="https://www.facebook.com/getflofit" target="_blank" class="fb"><i class="ff ff-fb-negative"></i> LIKE US ON FACEBOOK
+                        </a></li>
+                    <li><a href="https://twitter.com/getflofit" target="_blank" class="tw"><i class="ff ff-twitter-negative"></i> FOLLOW US ON TWITTER
+                        </a>
+                    </li>
+                    <li><a href="https://instagram.com/getflofit" target="_blank" class="in"><i class="ff ff-insta-negative"></i> FOLLOW US ON INSTAGRAM
+                        </a></li>
+                    <li>
+                        <a href="https://youtu.be/Xr0EoRZTZFw" target="_blank" class="yt"><i class="ff ff-youtube"></i> WATCH US ON YOUTUBE
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/110554613786119012595?prsrc=3" target="_blank" class="gp"><i class="ff ff-g-negative"></i> JOIN US ON GOOGLE+
+                        </a>
+                    </li>
+                </ul>
+        #}
+    </nav>
+    <p class="fine-print">Consult your physician and follow all safety instructions before beginning any exercise
+        program.<br/>All trademarks, products and service names are the property of their respective owners.</p>
+
+    <p class="fine-print">Results may vary. Exercise and proper diet are necessary to achieve and maintain weight loss
+        and muscle definition.<br/>
+        Please send all questions and order inquiries to <a title="Help" class="fancybox fancybox-margin"
+                                                            data-fancybox-type="iframe"
+                                                            href="//resultsink.desk.com/customer/widget/emails/new?ticket%5Bcustom_refpage%5D=flofit.com">help@flofit.com</a><br/>
+    </p>
+    <p class="fine-print">ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click
+        Sales, Inc., a Delaware corporation located at 917 S. Lusk Street, Suite 200, Boise Idaho, 83706, USA and used
+        by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of this
+        product or any claim, statement or opinion used in promotion ofthis product.</p>
+    <p class="fine-print">FLO&nbsp;FIT © 2016</p>
+    <p class="fine-print">Burn It Now Productions, Inc. FLO&nbsp;FIT and FLO&nbsp;RIDA trademarks, name, image, and likeness are
+        owned by FLO&nbsp;RIDA and FLO&nbsp;FIT Holdings LLC, and are being used under license by Flo Life LLC. All rights
+        reserved.</p>
+</footer>
+<div class="backgroundPopup"></div>
+<div id="player-pop" style="display:none">
+    <div class="player-pop-head"><a class="player-pop-close" href="" onclick="closePlayer();return false;"><i
+                    class="fa fa-times fa-lg"></i></a></div>
+    <div class="player-pop-body">
+        <div id="player-pop-body">
+        </div>
+    </div>
+    <div class="player-pop-foot"></div>
+</div>
+<script src="{{ asset("js/lazy.min.js") }}"></script>
+<script src="{{ asset("js/general-new.min.js") }}"></script>
+<script src="{{ asset("js/jquery.fancybox.min.js") }}"></script>
+{#<script src="{{ asset("js/jquery.fancybox.js") }}"></script>#}
+
+<!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 961968973;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div>
+        <img height="1" width="1" alt=""
+             src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/961968973/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+<!-- Google Analytics code START -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-68358953-1', 'auto');
+    ga('require', 'displayfeatures');  // demographic features
+    ga('send', 'pageview');
+
+</script>
+<!-- Google Analytics code END -->
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="//jwpsrv.com/library/6paQvgkiEeSf2CIAC0MJiQ.js"></script>
+<script>
+    jwplayer("video").setup({
+        stretching: "uniform",
+        primary: "html5",
+        width: "100%",
+        aspectratio: "16:9",
+//        autostart: true,
+        autoplay: true,
+        image: "{{ asset("images/ff-thumb.png") }}",
+        {% if isMobile %}
+        file: "https://player.vimeo.com/external/153356841.sd.mp4?s=f148c3232155cd60bb01fa3a64cf62b5911d7c22&profile_id=112",
+        {% elseif isTablet %}
+        file: "https://player.vimeo.com/external/153356841.hd.mp4?s=babe5679c3cd1239cd429797974d254e3ecbe728&profile_id=113",
+        {% else %}
+        file: "https://player.vimeo.com/external/153356841.hd.mp4?s=babe5679c3cd1239cd429797974d254e3ecbe728&profile_id=119",
+        {% endif %}
+        skin: "{{ asset("skin-mobile.xml", "app") }}",
+        ga: {}
+    });
+
+    function scrolldown() {
+        $('html, body').animate({
+            scrollTop: $("#more").offset().top
+        }, 500, "swing", function () {
+            $('#video-presentation').slideDown(500);
+            $('#video-line').slideDown(0);
+        });
+
+        // set the volume to 100% just in case the user turned it down
+        jwplayer("video").setVolume(100);
+        jwplayer("video").play();
+    }
+
+    function loadPlayer() {
+        jwplayer("video-aviable-immediately").setup({
+            stretching: "uniform",
+            primary: "flash",
+            width: "100%",
+            aspectratio: "16:9",
+            autoplay: false,
+//            autostart: true,
+            image: "{{ asset('images/1200/thumb-available-immediately-play-dark.jpg') }}",
+            {% if isMobile %}
+            file: "https://player.vimeo.com/external/154297506.sd.mp4?s=cb16650e410dd382129453ee684844b895bdbb5e&profile_id=112",
+            {% elseif isTablet %}
+            file: "https://player.vimeo.com/external/154297506.hd.mp4?s=2ba3b8226a7b88f1c040d45f4b2d27859942136d&profile_id=113",
+            {% else %}
+            file: "https://player.vimeo.com/external/154297506.hd.mp4?s=2ba3b8226a7b88f1c040d45f4b2d27859942136d&profile_id=119",
+            {% endif %}
+            skin: "{{ asset("skin-mobile.xml", "app") }}"
+        });
+        // set the volume to 100% just in case the user turned it down
+        jwplayer("video-aviable-immediately").setVolume(100);
+    }
+    setTimeout(loadPlayer, 1);
+
+    // fancybox
+    $('.fancybox').fancybox();
+</script>
+<script>
+    $(document).ready(function () {
+        $('#btn-watch-presentation').on('click', function () {
+            ga('send', 'event', 'Button', 'Click', 'PlayPresentation');
+        });
+//        $('.section-14').on('click', function () {
+//            jwplayer("video-aviable-immediately").play();
+//        });
+    });
+</script>
+
+<!-- Crazy Egg START -->
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0018/9411.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>
+<!-- Crazy Egg END -->
+
+<script type="application/javascript">
+    $(document).ready(function () {
+        $('.bxslider').bxSlider({
+            pager: true,
+            autoHover: true
+        });
+    });
+</script>
+
+{{ pixel|raw }}
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '186485591719503');
+    fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=186485591719503&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+    var google_tag_params = {
+        dynx_itemid: 'REPLACE_WITH_VALUE',
+        dynx_itemid2: 'REPLACE_WITH_VALUE',
+        dynx_pagetype: 'REPLACE_WITH_VALUE',
+        dynx_totalvalue: 'REPLACE_WITH_VALUE',
+    };
+</script>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 928791961;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/928791961/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+<!-- Begin Inspectlet Embed Code -->
+<script type="text/javascript" id="inspectletjs">
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 1219139433]);
+    (function() {
+        function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+        setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+    })();
+</script>
+<!-- End Inspectlet Embed Code -->
+
+</body>
+</html> 

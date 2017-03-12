@@ -1,0 +1,151 @@
+{% extends "::baseUpsell.html.twig" %}
+
+{% block title %}FLO FIT - Lifetime Digital{% endblock %}
+
+{% block content %}
+<section class="video display-none">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="video-box">
+                    <div id="video"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="lifetime-digital-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <h1 class="headline-01">Congratulations!<br> And Here’s What to Do NOW for BIG&nbsp;SAVINGS!</h1>
+
+                <p class="bold font-19">Congratulations on making the decision to get fit with FLO&nbsp;FIT!</p>
+
+                <p>You’re about to experience getting in shape on a whole other level.</p>
+
+                <p>Before we get started, though, I want to give you the opportunity so save some money.</p>
+
+                <p><strong>A&nbsp;LOT of money.</strong></p>
+
+                {% if previousProduct is defined and previousProduct is not null %}
+                    {% if previousProduct.trialDays > 7 %}
+                        <p>You’ve opted for the monthly billing after your 14-day trial of only ${{ previousProduct.secondPrice }}.</p>
+                    {% else %}
+                        <p>You’ve opted for the monthly billing after your 7-day trial of only ${{ previousProduct.secondPrice }}.</p>
+                    {% endif %}
+                {% else %}
+                    <p>You’ve opted for the monthly billing after your 7-day trial of only $4.95.</p>
+                {% endif %}
+
+
+                <p>But what if I could show you a way to get <strong>FLO&nbsp;FIT for FREE every month – FOREVER!?</strong></p>
+
+                {% if price is defined and price is not null %}
+                    <p>Just click the box below and we’ll bill your credit card – one time and one time only – just ${{ price }}.</p>
+                {% else %}
+                    <p>Just click the box below and we’ll bill your credit card – one time and one time only – just $37.</p>
+                {% endif %}
+
+                <p>And you have 60 days – a full TWO&nbsp;MONTHS – to make absolutely sure you love FLO&nbsp;FIT. Because unless you do, just say the word and I’ll rush every penny right back to you!</p>
+
+                <p>You pay for less than a year of FLO&nbsp;FIT, but you get FLO&nbsp;FIT absolutely FREE for the rest of your life.</p>
+
+                <p><strong>All the videos. All the special reports. All the fat-burning, muscle-toning secrets, training, advice and help</strong> that will put you on the path – and speed you right along -- to the getting and keeping trim, super-sexy body you’ve always wanted.</p>
+
+                <p>How can we afford to do this?</p>
+
+                <p>Our accountant tells me it’s a whole lot easier on her to get just one single payment one time – instead getting a payment every month.</p>
+
+                <p><strong>So save her a little hassle. And save yourself a lot of money.</strong></p>
+
+                <p>Click the box below for money-saving single payment option RIGHT&nbsp;NOW and take advantage of this special one-time offer.</p>
+
+            </div>
+        </div>
+        <div class="buy-box">
+            <div class="row">
+                <div class="span-medium-24">
+                    <div class="prices">
+                        {#<h4 class="first-price">{{ priceOld }}</h4>#}
+                        {#<span>&nbsp;&nbsp;</span>#}
+                        <h3 class="second-price">{{ priceNew }}</h3>
+                    </div>
+                    <div class="button-card">
+                        <a class="button button-danger buy-link-accept" href="{{ linkAccept }}"><i class="tiecons tiecons-basket-shop-buy"></i>Add to order</a>
+                        <i class="icon-p icon-paymentmethods"></i>
+                    </div>
+                    <p class="text-center"><strong>Yes! I want to save by getting lifetime access today!</strong></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span-large-20 offset-large-2 margin-vertical-30">
+                    <a href="{{ linkDecline }}" class="no-link">No thanks. I understand that this is my only opportunity to save big by getting Lifetime Access today and I’m okay with missing out. I understand that after declining this offer, the special Lifetime Access package will never be available in this form again to me at any price... even if I wish to pay more. So realize I’m passing on this forever.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+    {{ parent() }}
+
+    {% if initialPurchase is not null %}
+        <!-- SCRIPTS - GA Ecomerce - send initial purchase START -->
+        <script>
+            ga('ecommerce:addTransaction', {
+                'id': '{{ cbf }}'     // Transaction ID.
+            });
+
+            console.log("GA: Sending initial purchase: {{ initialPurchase["productName"] }} - {{ initialPurchase["productId"] }} - {{ initialPurchase["price"] }}");
+
+            // add the previous item!
+            ga('ecommerce:addItem', {
+                'id': '{{ cbf }}', // Transaction ID. Required.
+                'name': '{{ initialPurchase["productName"] }}', // Product name. Required.
+                'sku': '{{ initialPurchase["productId"] }}', // SKU/code.
+                'price': '{{ initialPurchase["price"] }}', // Unit price.
+                'quantity': '1'                   // Quantity.
+            });
+
+            ga('ecommerce:send');
+        </script>
+        <!-- SCRIPTS - GA Ecomerce - send initial purchase END -->
+    {% endif %}
+
+
+    {% if displayPixel %}
+        {# PLACE ANY PIXELS HERE #}
+    {% endif %}
+
+    <!-- Google Code for Order_2016 Conversion Page -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 928791961;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "iDqfCL3iimQQmfvwugM";
+        var google_remarketing_only = false;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/928791961/?label=iDqfCL3iimQQmfvwugM&amp;guid=ON&amp;script=0"/>
+        </div>
+    </noscript>
+
+    <script>
+        // track purchase for $50
+        fbq('track', 'Purchase', {value: '50', currency: 'USD'});
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "::baseUpsell.html.twig" %}
+
+{% block title %}FLO FIT - 7 Day Rip Mix{% endblock %}
+
+{% block content %}
+<section class="video">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="video-box clearfix">
+                    <div id="video"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="buy-box">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="prices">
+                    <h4 class="first-price">{{ priceOld }}</h4>
+                    <span>&nbsp;&nbsp;</span>
+                    <h3 class="second-price">{{ priceNew }}</h3>
+                </div>
+                <div class="button-card">
+                    <a class="button button-danger buy-link-accept" href="{{ linkAccept }}"><i class="tiecons tiecons-basket-shop-buy"></i>Add to order</a>
+                    <i class="icon-p icon-paymentmethods"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <h1>“Here's How to Look 10 to 15 Pounds Lighter—INSIDE OF A WEEK!"</h1>
+                <img src="{{ asset("images/upsells/rip-mix.png") }}" alt="RIP MIX" class="img-responsive margin-auto padding-bottom-30 upsell-product-shot" width="327" height="548" style="max-width: 100%;width: auto;"/>
+
+                <p class="bold font-19">Mike again with one last thing—and it may well be the most important of all.</p>
+
+                {#<p class="bold">I’d like to introduce you to the <span class="display-block color-primary-blue font-37 text-center normal">7 Day Rip Mix</span></p>#}
+
+                <p>If you want the absolute fastest results…</p>
+                <p>If you want the truly advanced secrets to rapidly leaning down in just one single week for a wedding, reunion, vacation, or weekend at the beach.</p>
+                <p>Then you’ll want to pay close attention to this.</p>
+                <p>Because I’d like to introduce you to the 7-Day Rip Mix.</p>
+                <p>Let’s face it, sometimes time is not on your side when you want and need to look your best – and FAST.</p>
+                <p>That’s exactly why this special, condensed solution for looking 10 to 15 pounds leaner and tighter in just 7 days was created.</p>
+                <p>This 7 Rip Mix can be used at any point in the FLO FIT program, and is guaranteed to help you burn more calories, get leaner, tone your body, and get the results you want in the quickest time humanly possible.</p>
+                <p>Flo and I will give you additional and specific FLO FIT workouts and delicious meals for each of the 7 days that have been scientifically tweaked for a one-week blast that gets results FAST.</p>
+                <p>Look, if you’re looking to create some “Mirror Magic” in just 1 week so that you can be looking your absolute best and turning heads when you want to most…</p>
+                <p>And you don’t mind putting in just a bit of extra effort to do it…</p>
+                <p>Then I promise you: The FLO FIT 7-Day Rip Mix workout calendar and meal plan will get it done.</p>
+                <h1>You’re Just 7 Days Away from a New You</h1>
+                <p>And since it works at any stage of your FLO FIT transformation. The coolest benefit is that you can be ALWAYS be within 7 days of your absolute best body, at any time, in any season.</p>
+                <p>How’s THAT for less stress? So take advantage of this onetime opportunity offer by clicking the “add to order” button below and putting these somewhat sneaky tricks to work for YOU!</p>
+                <p>Of course: It’s guaranteed, money back if not ecstatic with the program or results... If you’re not happy—we’re not happy.</p>
+            </div>
+        </div>
+        <div class="buy-box">
+            <div class="row">
+                <div class="span-medium-24">
+                    <div class="prices">
+                        <h4 class="first-price">{{ priceOld }}</h4>
+                        <span>&nbsp;&nbsp;</span>
+                        <h3 class="second-price">{{ priceNew }}</h3>
+                    </div>
+                    <div class="button-card">
+                        <a class="button button-danger buy-link-accept" href="{{ linkAccept }}"><i class="tiecons tiecons-basket-shop-buy"></i>Add to order</a>
+                        <i class="icon-p icon-paymentmethods"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span-large-20 offset-large-2 margin-vertical-30">
+                    <a href="{{ linkDecline }}" class="no-link">No thanks. I understand that this is my only opportunity to get access to this information and I’m okay with missing out. I understand that after declining this offer, the special 7-day Rip Mix package will never be available in this form again to me at any price... even if I wish to pay more. So I will pass on this forever.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

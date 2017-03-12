@@ -1,0 +1,224 @@
+{% extends "::baseUpsell.html.twig" %}
+
+{% block title %}FLO FIT - Platinum Club{% endblock %}
+
+{% block content %}
+    <section class="video">
+        <div class="container">
+            <div class="row">
+                <div class="span-medium-24">
+                    <div class="video-box">
+                        <div id="video"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="buy-box">
+            <div class="row">
+                <div class="span-medium-24">
+                    <div class="prices">
+                        <h4 class="first-price">{{ priceOld }}</h4>
+                        <span>&nbsp;&nbsp;</span>
+                        <h3 class="second-price">{{ priceNew }}</h3>
+                    </div>
+                    <div class="row">
+                        <input type="checkbox" id="agree_1" class="accept-checkbox"/>
+                        <label for="agree_1">I agree to the payment terms of this recurring product.</label>
+                        <p class="text-center font-14">Your initial charge will be $0. You will then be charged $79/month for 5 months after your initial charge has been made.</p>
+                    </div>
+                    <div class="button-card">
+                        <a class="button button-danger buy-link" href="{{ linkAccept }}"><i class="tiecons tiecons-basket-shop-buy"></i>Add to order</a>
+                        <i class="icon-p icon-paymentmethods"></i>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="span-large-20 offset-large-2 margin-vertical-30">
+                                <a href="{{ linkDecline }}" class="no-link">No thanks. I understand that this is my only opportunity to get access to this information and I’m okay with missing out. I understand that after declining this offer, the special Platinum Club package will never be available in this form again to me at any price... even if I wish to pay more. So I will pass on this forever.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="span-medium-24">
+                    <h1>Congratulations! Claim Your FREE Membership…</h1>
+                    <p class="bold font-19">Mike here again…</p>
+
+                    <p>Congratulations on making the decision to get fit with FLO FIT!</p>
+
+                    <p>You’re about to experience getting in shape on a whole other level!</p>
+
+                    <p>Before we get started, though, I wanted to make sure you got that special FREE access to our exclusive Platinum Club I mentioned before.</p>
+
+                    <p>Just click on the link below and I’ll lift that velvet rope and you’re in!</p>
+
+                    <h1>How Celebrities Get—and Stay—in Such  Great Shape</h1>
+
+                    <p>This is your Special Backstage Pass to the secret world of celebrity trainers—and the secrets we use to get super-fast results, and keep our demanding clients in amazing, camera-ready shape.</p>
+
+                    <p>Look, our BEST stuff isn’t something you’ll find us posting on YouTube. It’s simply too exclusive… and reserved for our A-list clients.</p>
+
+                    <img src="{{ asset("images/upsells/platinum-club.png") }}" alt="PLATINUM CLUB" class="img-responsive margin-auto padding-bottom-30 upsell-product-shot" width="327" height="548" style="max-width: 100%;width: auto;"/>
+                    <p>And now YOU can get hold of this exclusive information when you become part of Flo and my Inner Circle in our exclusive <span class="color-primary-blue italic uppercase">Platinum Club.</span></p>
+
+                    <p>We’ll lift the curtain, take you behind the scenes and show you the real truth about what getting in shape—and living the FLO FIT life—is really all about.</p>
+
+                    <p>Like shortcuts and “ninja hacks” to losing weight fast and getting in shape when shooting starts in just a few weeks.</p>
+
+                    <p>Or the mental game famous celebrities and professional athletes play with themselves to ensure they’re always in the zone.</p>
+
+                    <p>And how to design the perfect fitness mix for your unique lifestyle.</p>
+
+                    <p>Step into the <span class="color-primary-blue italic uppercase">Platinum Club</span> and let me walk you through ALL the super secrets only A-list celebrities and top athletes get access to.</p>
+
+                    <p>Like the real truth about starvation mode: Is it really something you should be worried about?</p>
+
+                    <p>And what about supplements? Do ANY of them REALLY work?</p>
+
+                    <p>All this and so much more will be revealed with your free Backstage Pass to the <span class="color-primary-blue italic uppercase">Platinum Club</span>.</p>
+
+                    {#<h3 class="color-black font-37 text-center margin-vertical-40">Check out the Platinum Club for 30 days,<span class="display-block font-30 color-primary-blue margin-top-10">completely free, all on FLO and Mike.</span></h3>#}
+
+                    <h1>Here’s just some of what you’ll get:</h1>
+
+
+                    <ul class="list-check">
+                        <li><strong>Additional workouts designed for my celebrity clients.</strong> Until now, these workouts were seen only seen by my clients, including A-list actors, musicians and athletes. They’re cutting edge: short in terms of time, and long in terms of results and will turn your body into a 24/7 fat burning machine by turning up your metabolism so you will burn fat even while you sleep!</li>
+                        <li><strong>Special articles from me and Flo that reveal tips and tricks you always suspected existed, but were being held back from you</strong> – Get the same backstage access to fitness and nutrition information that Hollywood stars have!</li>
+                        <li><strong>Special workouts from guest trainers.</strong> These workouts are unique because they target “trouble” areas of your body, like flabby arms, love handles, or a saggy butt. Plus they are built around the concept of muscle confusion—which “tricks” your body into losing weight at light speed without losing muscle! More building blocks for your Perfect Mix.</li>
+                        <li><strong>Loads of mouth-watering, member-only meal plans and recipes.</strong> We created many of these meals with the help of Flo’s personal chef. They’re so delicious and decadent, many <span class="color-primary-blue italic uppercase">Platinum Club</span> members can’t believe they help you lose weight. And they’re super-easy and simple. In fact, most take 20 minutes or less to make!</li>
+                        <li><strong>Complete access to the same pro-level supplement-ingredient database that the supplement-makers themselves use</strong> – This is the industry-insider information supplement companies themselves rely on, with every ingredient effectiveness rated from A to E. From now on you’ll have absolute confidence when choosing supplements because you will know what works, what’s worthless, and what’s dangerous. Talk about saving money!</li>
+                        <li><strong>Top-level members-only Platinum Help</strong> – These special dedicated coaches are ready and qualified to give you the extra help you need to accelerate your fitness transformation. I truly believe coaching is a game-changer, because everyone, even a top athlete, needs a coach to remind you of your goals, push you when you feel like giving up, and help you navigate obstacles.</li>
+                        <li><strong>An exclusive members-only <span class="color-primary-blue italic uppercase">Platinum Club</span> forum.</strong> Here’s where you’ll share with and get support from fellow <span class="color-primary-blue italic uppercase">Platinum Club</span> members—people conquering the same obstacles as you. No wonder many members have become close friends. They say you know how successful you will be by the type of people you surround yourself with. When you’re in the <span class="color-primary-blue italic uppercase">Platinum Club</span>, you’re surrounded by the most successful and most motivated people I know.</li>
+                        <li><strong>PLUS…lots more exclusive content and videos from me and Flo</strong> that will supercharge the results you get from the FLO FIT program. You are going to be fired up every time you look in the mirror and see the fat melting off your body AND feel like you have a stadium full of friends and coaches cheering you on. That’s the type of resources and support you get as a Platinum member.</li>
+                    </ul>
+
+                    <p>Frankly, the <span class="color-primary-blue italic uppercase">Platinum Club</span> is a goldmine—some of the most valuable and cutting-edge information you can find, designed to do one thing and one thing only: accelerate your results.</p>
+
+                    <p>OK... Dead serious here.</p>
+
+                    <p>Like I said, YOU are in FREE.</p>
+
+                    <p>Flo and I have bought you a 30-day membership. No cost or obligation.</p>
+
+                    <p>Just enjoy the content, discover the secrets and apply the learnings</p>
+
+                    <p>Join us backstage as we reveal everything you need to create your own Perfect Mix.</p>
+
+                    <p>Then, after 30 days, if and only if you’re LOVING it (as we think you will), it’s only 79 dollars a month for 5 months.</p>
+
+                    <p>What happens after 5 months?</p>
+
+                    <p>You get a FREE LIFETIME MEMBERSHIP!</p>
+
+                    <h1>No Risk. No Obligation.</h1>
+
+                    <p>Not loving it?</p>
+
+                    <p>Of course, you can cancel at any time right in your client portal. Cancel within 30 days and you pay NOTHING.</p>
+
+                    <p>All it takes is just one click. No need to even contact client support (unless you want to).  You can do it 100% yourself.</p>
+
+                    <p>Take the time to really get exposed to what’s really going on BACKSTAGE in the diet and fitness industry.</p>
+
+                    <p>Discover all the dirt. And all the secrets that will send your results into overdrive.</p>
+
+                    <p>Simply click the “add to order” button below and you’ll be given Instant Access to the <span class="color-primary-blue italic uppercase">Platinum Club</span>.  Completely free. Dive in and enjoy it all.</p>
+                </div>
+            </div>
+            <div class="buy-box">
+                <div class="row">
+                    <div class="span-medium-24">
+                        <div class="prices">
+                            <h4 class="first-price">{{ priceOld }}</h4>
+                            <span>&nbsp;&nbsp;</span>
+                            <h3 class="second-price">{{ priceNew }}</h3>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="agree_2" class="accept-checkbox"/>
+                            <label for="agree_2">I agree to the payment terms of this recurring product.</label>
+                            <p class="text-center font-14">Your initial charge will be $0. You will then be charged $79/month for 5 months after your initial charge has been made.</p>
+                        </div>
+                        <div class="button-card">
+                            <a class="button button-danger buy-link" href="{{ linkAccept }}"><i class="tiecons tiecons-basket-shop-buy"></i>Add to order</a>
+                            <i class="icon-p icon-paymentmethods"></i>
+                        </div>
+                    </div>
+                </div>
+                <a class="buy-link" href="{{ linkAccept }}">Give Me My FREE Backstage Access NOW</a>
+                <div class="row">
+                    <div class="span-large-20 offset-large-2 margin-vertical-30">
+                        <a href="{{ linkDecline }}" class="no-link">No thanks. I understand that this is my only opportunity to get access to this information and I’m okay with missing out. I understand that after declining this offer, the special Platinum Club package will never be available in this form again to me at any price... even if I wish to pay more. So I will pass on this forever.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    {{ parent() }}
+
+    <!-- SCRIPTS - Accept button START -->
+    <script type="text/javascript">
+        function click()
+        {
+            var toggles = document.getElementsByClassName("accept-checkbox");
+            var checked = toggles[0].checked;
+
+            if(!checked) {
+                window.alert("Please click the box to agree to the payment terms of this recurring product.");
+                return false;
+            }
+            else {
+                window.location.href = this.href + "&cbrblaccpt=true";
+                // call GE ecommerce send action - defined in parent template
+                GAEcommerceSendTransaction();
+
+                return false;
+            }
+        }
+
+        function toggleAccept()
+        {
+            var links = document.getElementsByClassName("buy-link");
+
+            for(var i = 0; i < links.length; i++)
+            {
+                // append events
+                links[i].onclick = click;
+            }
+        }
+
+        setTimeout(function(){
+            var toggles = document.getElementsByClassName("accept-checkbox");
+
+            for(var i = 0; i < toggles.length; i++)
+            {
+                toggles[i].checked = true;
+            }
+
+            toggleAccept();
+        }, 6 * 60 * 1000);
+
+        toggleAccept();
+
+        $("#agree_1").change(function() {
+            $("#agree_2").prop("checked", this.checked);
+        });
+        $("#agree_2").change(function() {
+            $("#agree_1").prop("checked", this.checked);
+        });
+
+    </script>
+    <!-- SCRIPTS - Accept button END -->
+
+
+{% endblock %}

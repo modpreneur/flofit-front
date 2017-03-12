@@ -1,0 +1,111 @@
+{% extends "::baseUpsell.html.twig" %}
+
+{% block title %}FLO FIT - Platinum Mix{% endblock %}
+
+{% block content %}
+<section class="video">
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="video-box">
+                    <div id="video"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="buy-box">
+        <div class="row">
+            <div class="span-medium-24">
+                <div class="prices">
+                    <h4 class="first-price">{{ priceOld }}</h4>
+                    <span>&nbsp;&nbsp;</span>
+                    <h3 class="second-price">{{ priceNew }}</h3>
+                </div>
+                <div class="button-card">
+                    <a class="button button-danger buy-link-accept" href="{{ linkAccept }}"><i class="tiecons tiecons-basket-shop-buy"></i>Add to order</a>
+                    <i class="icon-p icon-paymentmethods"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span-medium-24">
+                <h1>“Here's How Take Your Mix To the MAX…”</h1>
+
+
+                <p class="bold font-19">Hey, Mike here again.</p>
+
+                <p>When Flo wanted to ramp up his results even further – to take them to the next level by giving them some extra juice…</p>
+
+                <p>He really forced me to dig deep into my toolbox to come up with something extra--something truly unique and special.</p>
+
+                {#<p class="bold">Introducing the <span class="display-block color-primary-blue font-37 text-center normal">Platinum Mix Upgrade with Calendar</span></p>#}
+
+                <p>And now, if you’re willing, I believe that what I came up with could also maximize YOUR results.</p>
+
+                <p>And so I’d like to offer it to you right now.</p>
+
+                <p>It’s called the Platinum Mix Upgrade with Training Calendar.</p>
+
+                <p>If you’re looking to go next level and achieve that platinum level body, the FLO FIT Platinum Upgrade Package will do just that for you.</p>
+
+                <h1>More Workouts Plus a PLATINUM Calendar for Even Better Results</h1>
+
+                <img src="{{ asset("images/upsells/platinum-mix.png") }}" alt="PLATINUM MIX" class="img-responsive margin-auto padding-bottom-30 upsell-product-shot" width="327" height="548" style="max-width: 100%;width: auto;"/>
+
+                <p>The PLATINUM mix includes two special additional full workouts, as well as the Platinum "done-for-you" 8-week training calendar, which shows you how to integrate the PLATINUM MIX into your program and life.</p>
+
+                <p>The first full workout, Platinum Iso Explode, gives you the perfect mix of isometric holds and explosive movements done in rapid succession.</p>
+
+                <p>We’ll challenge you like never before and keep your metabolism humming at peak levels burning fat and getting you beautifully toned.</p>
+
+                <p>The Upper Body Definition Workout will perfect your “beach body” by combining high-intensity metabolic resistance training with strategic interval training-based cardio.</p>
+
+                <p>This dynamic workout duo will torch fat so effectively, you’ll never feel anxious in a bathing suit again.</p>
+
+                <p>And best of all, you get the exclusive step by step 8-Week Platinum Training Calendar with these 2 bonus Platinum Workouts for the ultimate DONE FOR YOU mix of FLO FIT goodness that gets you in the best shape of your life.</p>
+
+                <p>Current clients find this MIX to be one of the most satisfying parts of the whole FLO FIT experience, because everything gets dialed in so perfectly.</p>
+
+                <p>In short: These two special ADDITIONAL workouts are a powerful piece of the puzzle you don’t want to miss!</p>
+
+                <h1>Nothing to Lose… But That Extra Weight</h1>
+
+                <p>Now because I know you're going absolutely going to love what this PLATINUM MIX experience delivers to you, I won’t ask you to decide now.</p>
+
+                <p>Instead, I’ll make this decision extremely easy for you by giving you a 60 day, 100% money back guarantee.</p>
+
+                <p>Just TRY it. If you’re not thrilled, just say and we’ll rush you a full refund.</p>
+
+                <p>Don't pass up this onetime opportunity to ramp up your results to the next level on your way to that PLATINUM BODY!</p>
+
+                <p>Click the "Add To Order" button below and I'll see you on the next page.</p>
+            </div>
+        </div>
+        <div class="buy-box">
+            <div class="row">
+                <div class="span-medium-24">
+                    <div class="prices">
+                        <h4 class="first-price">{{ priceOld }}</h4>
+                        <span>&nbsp;&nbsp;</span>
+                        <h3 class="second-price">{{ priceNew }}</h3>
+                    </div>
+                    <div class="button-card">
+                        <a class="button button-danger buy-link-accept" href="{{ linkAccept }}"><i class="tiecons tiecons-basket-shop-buy"></i>Add to order</a>
+                        <i class="icon-p icon-paymentmethods"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span-large-20 offset-large-2 margin-vertical-30">
+                    <a href="{{ linkDecline }}" class="no-link">No thanks. I understand that this is my only opportunity to get access to this information and I’m okay with missing out. I understand that after declining this offer, the special Platinum Upgrade package will never be available in this form again to me at any price... even if I wish to pay more. So I pass on this forever.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

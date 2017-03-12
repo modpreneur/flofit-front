@@ -1,0 +1,104 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  background: url("../images/vsl/header-bg.jpg") no-repeat top center;
+  background-size: cover;
+}
+header .clickbank-header {
+  background-color: #ffffff;
+}
+header .clickbank-header img {
+  margin: 0 auto 4px;
+}
+header .main-logo {
+  margin: 25px auto;
+}
+header .video-box {
+  width: 100%;
+  max-width: 797px;
+  margin: auto;
+}
+header #video_wrapper {
+  box-shadow: 0 0 120px #000;
+}
+header .button-add {
+  margin: 45px auto 31px;
+}
+@media (max-width: 767px) {
+  header .button-add {
+    font-size: 39px;
+  }
+}
+@media (max-width: 479px) {
+  header .button-add {
+    font-size: 25px;
+    margin: 20px auto;
+    padding: 17px 10px;
+  }
+}
+.button-add {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  background-color: #d31921;
+  border: solid 1px #fff;
+  border-radius: 100px;
+  padding: 32px 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 582px;
+}
+.button-add:hover {
+  background-color: #a5141a;
+}
+footer {
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 50px;
+}
+footer hr {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1px;
+  border: 0;
+  background-color: #D8D8D8;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+footer p {
+  font-size: 16px;
+  text-align: center;
+  color: #8d8d8d;
+  margin: auto;
+}
+footer a {
+  padding-top: 10px;
+  display: inline-block;
+}
+footer a i {
+  font-size: 60px;
+  color: #00477c;
+}
+.link,
+.link:visited {
+  color: #00aeef !important;
+}
+.link:hover {
+  color: #00477c !important;
+}
+.learn-more-mobile-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #d31921;
+  color: #fff;
+  z-index: 10;
+  padding: 7px 35px;
+  border-top-left-radius: 6px;
+  font-size: 18px;
+  font-weight: 300;
+}

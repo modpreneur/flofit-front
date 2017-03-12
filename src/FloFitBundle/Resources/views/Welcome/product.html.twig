@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="keywords" content="">
+    <meta name="title" content="Flow Fit">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0"/>
+    <!-- facebook tags -->
+    <meta property="og:image" content="https://www.flofit.com/%7EASSETS/IMG/1200/s41.jpg"/>
+    <meta property="og:title" content="Flo Fit &mdash; FLO FIT"/>
+    <meta property="og:url" content="https://www.flofit.com/"/>
+    <meta property="og:site_name" content="FLO FIT"/>
+    <meta property="og:type" content="website"/>
+    <meta property="fb:app_id" content="401519239998227"/>
+    <meta property="fb:business_id" content="401519239998227"/>
+
+    <title>Flo Fit &mdash; FLO FIT</title>
+
+    <link href='//fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/bowtie-vsl.css") }}"/>
+
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/ff-icon.css") }}"/>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/roboto.css") }}"/>
+
+    {% stylesheets '@FloFitBundle/Resources/public/less/vsl-full.less' filter="less" output="css/vsl-full.css"  %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset("css/vsl-full.css") }}?v=1"/>
+    {% endstylesheets %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset("favicon.ico", "app") }}">
+
+    <script type="text/javascript" src="{{ asset('bundles/bmatznerjquery/js/jquery.min.js', 'app') }}"></script>
+
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+            background-color: #012546;
+        }
+
+        #hidden1 {
+        }
+
+        /* HERMI override */
+        @media (min-width: 1024px) { .custom-display-none-x-large { display: none !important; } }
+        @media (min-width: 768px) and (max-width: 1023px) { .custom-display-none-large { display: none !important; } }
+        @media (min-width: 480px) and (max-width: 767px) { .custom-display-none-medium { display: none !important; } }
+        @media (min-width: 320px) and (max-width: 479px) { .custom-display-none-small { display: none !important; } }
+        @media (max-width: 319px) { .custom-display-none-mini { display: none !important; } }
+    </style>
+
+    {% if not isMobile %}
+    <script src='//cbtb.clickbank.net/?vendor=flofit'></script>
+    {% endif %}
+
+    {% if useJW7 %}
+        <!-- PLAYER -->
+        <script src="http://content.jwplatform.com/libraries/cIS7inOF.js"></script>
+        <script>
+            function loadPlayer() {
+                jwplayer("video").setup({
+                    stretching: "uniform",
+                    aspectratio: "16:9",
+                    primary: "html5",
+                    width: "100%",
+                    file: "{{ videoSource }}",
+                    image: "{{ asset("images/video-thumb-ff.jpg") }}",
+                    autostart: true,
+                    ga: {}
+                });
+                // set the volume to 100% just in case the user turned it down
+                jwplayer().setVolume(100);
+            }
+
+            setTimeout(loadPlayer, 1);
+        </script>
+        <style>
+            .jwplayer .jw-controlbar{
+                display: none !important;
+            }
+        </style>
+    {% else %}
+        <!-- SCRIPTS - Player START -->
+        <script src="{{ asset("js/jwplayer6.js") }}"></script>
+        <script>
+            function loadPlayer() {
+                jwplayer("video").setup({
+                    stretching: "uniform",
+                    primary: "flash",
+                    aspectratio: "16:9",
+                    width: "100%",
+                    file: "{{ videoSource }}",
+                    image: "{{ asset("images/video-thumb-ff.jpg") }}",
+                    autostart: true,
+                    skin: "{{ asset("skin-mobile.xml", "app") }}",
+                    ga: {}
+                });
+                // set the volume to 100% just in case the user turned it down
+                jwplayer().setVolume(100);
+            }
+
+            setTimeout(loadPlayer, 1);
+        </script>
+        <!-- SCRIPTS - Player END -->
+    {% endif %}
+</head>
+<body>
+{#{% if isMobile %}#}
+    {#<a class="learn-more-mobile-button" href="{{ path("learn_more_dp") }}" target="_blank">Learn more</a>#}
+{#{% endif %}#}
+
+<header>
+    <img src="{{ asset("images/vsl/header-logo.png") }}" alt="FLO FIT" class="img-responsive main-logo"/>
+    <section class="video">
+        <div class="container">
+            <div class="row">
+                <div class="span-medium-24">
+                    <div class="video-box">
+                        <div id="video"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="button-section">
+        <div class="container">
+            <div class="row" id="hidden1">
+                <div class="span-medium-24 text-center">
+                    <a class="button button-add" href="{{ link }}">GET ACCESS NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<footer class="padding-bottom-80">
+    <div class="container">
+        <hr/>
+        <div class="row">
+            <div id="clickbank-disclaimer"  class="span-large-20 offset-large-2">
+                <p class="font-11 text-center padding-vertical-25 lighter">ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 917 S. Lusk Street, Suite 200, Boise Idaho, 83706, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product.</p>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="span-medium-24">
+                <ul>
+                    <li><a href="{{ link }}">Get Started</a></li>
+                    <li><a href="{{ path('affiliates') }}">Affiliates</a></li>
+                    <li><a href="http://my.flofit.com/terms-of-use" target="_blank">Terms of use</a></li>
+                    <li><a href="http://my.flofit.com/privacy-policy" target="_blank">Privacy policy</a></li>
+                    <li><a href="http://my.flofit.com/help-and-faq" target="_blank">Help and FAQ</a></li>
+                    <li><a href="{{ path("learn_more") }}" target="_blank">Learn more</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <p>Copyright 2016 Flofit.com. All rights reserved</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-large-20 offset-large-2">
+                <p class="font-11 text-center padding-vertical-25 lighter">Burn It Now Productions, Inc. FLO FIT and FLO RIDA trademarks, name, image, and likeness are owned by FLO RIDA and FLO FIT Holdings LLC, and are being used under license by Flo Life LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{#<script src="{{ asset("js/lazy.min.js") }}"></script>#}
+{#<script src="{{ asset("js/vsl.js") }}"></script>#}
+<script src="{{ asset("js/unveil.js") }}"></script>
+
+<script>
+    $(document).ready(function() {
+        $("img.lazy-notrigger").unveil(300);
+    });
+
+    // load all images 5s before first timer
+    setTimeout(function() {
+        $("img.lazy-notrigger").trigger("unveil");
+    }, {{ timer1 - 5000 }});
+
+    setTimeout(function(){
+        setTimeout(function() {
+            $("#clickbank-disclaimer").slideDown(500);
+        }, 1000);
+    },{{ timer1 }});
+
+</script>
+<!-- SCRIPTS - Player END -->
+
+
+{% if pixelImg is defined %}
+    {{ pixelImg|raw }}
+{% endif %}
+
+<!-- Google Analytics code START -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-68358953-1', 'auto');
+    ga('require', 'displayfeatures');  // demographic features
+    ga('send', 'pageview');
+</script>
+<!-- Google Analytics code END -->
+
+<!-- Crazy Egg START -->
+<script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0018/9411.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!-- Crazy Egg END -->
+
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '186485591719503');
+    fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=186485591719503&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</body>
+</html> 

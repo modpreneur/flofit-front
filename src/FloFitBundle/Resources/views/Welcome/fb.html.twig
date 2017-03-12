@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% if app.environment != "dev" %}
+        {% if experiment %}
+        <!-- Google Analytics Content Experiment code -->
+        <script>function utmx_section(){}function utmx(){}(function(){var
+        k='{{ experimentId }}',d=document,l=d.location,c=d.cookie;
+        if(l.search.indexOf('utm_expid='+k)>0)return;
+        function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+        indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+        length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+        '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+        '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+        '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+        valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+        '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+        </script><script>utmx('url','A/B');</script>
+        <!-- End of Google Analytics Content Experiment code -->
+        {% endif %}
+    {% endif %}
+
+    <meta name="keywords" content="">
+    <meta name="title" content="Flow Fit">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0"/>
+    <!-- facebook tags -->
+    <meta property="og:image" content="https://www.flofit.com/%7EASSETS/IMG/1200/s41.jpg"/>
+    <meta property="og:title" content="Flo Fit &mdash; FLO FIT"/>
+    <meta property="og:url" content="https://www.flofit.com/"/>
+    <meta property="og:site_name" content="FLO FIT"/>
+    <meta property="og:type" content="website"/>
+    <meta property="fb:app_id" content="401519239998227"/>
+    <meta property="fb:business_id" content="401519239998227"/>
+
+    <title>Flo Fit &mdash; FLO FIT</title>
+
+    <link href='//fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/bowtie-vsl.css") }}"/>
+
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/ff-icon.css") }}"/>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="{{ asset("css/roboto.css") }}"/>
+
+    {% stylesheets '@FloFitBundle/Resources/public/less/vsl-full.less' filter="less" output="css/vsl-full.css"  %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset("css/vsl-full.css") }}?v=1"/>
+    {% endstylesheets %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset("favicon.ico", "app") }}">
+
+    <script type="text/javascript" src="{{ asset('bundles/bmatznerjquery/js/jquery.min.js', 'app') }}"></script>
+
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+            background-color: #012546;
+        }
+
+        #hidden1 {
+            display: none;
+        }
+
+        /* HERMI override */
+        @media (min-width: 1024px) { .custom-display-none-x-large { display: none !important; } }
+        @media (min-width: 768px) and (max-width: 1023px) { .custom-display-none-large { display: none !important; } }
+        @media (min-width: 480px) and (max-width: 767px) { .custom-display-none-medium { display: none !important; } }
+        @media (min-width: 320px) and (max-width: 479px) { .custom-display-none-small { display: none !important; } }
+        @media (max-width: 319px) { .custom-display-none-mini { display: none !important; } }
+    </style>
+
+    {% if not isMobile %}
+    <script src='//cbtb.clickbank.net/?vendor=flofit'></script>
+    {% endif %}
+
+
+    <!-- Begin Inspectlet Embed Code -->
+    <script type="text/javascript" id="inspectletjs">
+        window.__insp = window.__insp || [];
+        __insp.push(['wid', 59099217]);
+        (function() {
+            function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+            setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+        })();
+    </script>
+    <!-- End Inspectlet Embed Code -->
+</head>
+<body>
+{#{% if isMobile %}#}
+    {#<a class="learn-more-mobile-button" href="{{ path("learn_more_dp") }}" target="_blank">Learn more</a>#}
+{#{% endif %}#}
+
+<header>
+    <img src="{{ asset("images/vsl/header-logo.png") }}" alt="FLO FIT" class="img-responsive main-logo"/>
+    <section class="video">
+        <div class="container">
+            <div class="row">\
+                <div class="span-medium-24">
+                    <div class="video-box">
+                        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_ii3b7x24vg videoFoam=true wmode=transparent" style="height:100%;width:100%">&nbsp;</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="button-section">
+        <div class="container">
+            <div class="row" id="hidden1">
+                <div class="span-medium-24 text-center">
+                    <a class="button button-add" href="{{ link }}">GET ACCESS NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<footer class="padding-bottom-80">
+    <div class="container">
+        <hr/>
+        <div class="row">
+            <div id="clickbank-disclaimer" style="display: none !important;" class="span-large-20 offset-large-2">
+                <p class="font-11 text-center padding-vertical-25 lighter">ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 917 S. Lusk Street, Suite 200, Boise Idaho, 83706, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product.</p>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="span-medium-24">
+                <ul>
+                    <li><a href="{{ link }}">Get Started</a></li>
+                    <li><a href="{{ path('affiliates') }}">Affiliates</a></li>
+                    <li><a href="http://my.flofit.com/terms-of-use" target="_blank">Terms of use</a></li>
+                    <li><a href="http://my.flofit.com/privacy-policy" target="_blank">Privacy policy</a></li>
+                    <li><a href="http://my.flofit.com/help-and-faq" target="_blank">Help and FAQ</a></li>
+                    <li><a href="{{ path("learn_more") }}" target="_blank">Learn more</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-medium-24">
+                <p>Copyright 2016 Flofit.com. All rights reserved</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span-large-20 offset-large-2">
+                <p class="font-11 text-center padding-vertical-25 lighter">Burn It Now Productions, Inc. FLO FIT and FLO RIDA trademarks, name, image, and likeness are owned by FLO RIDA and FLO FIT Holdings LLC, and are being used under license by Flo Life LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{#<script src="{{ asset("js/lazy.min.js") }}"></script>#}
+{#<script src="{{ asset("js/vsl.js") }}"></script>#}
+<script src="{{ asset("js/unveil.js") }}"></script>
+
+<script>
+    var useTimers = true;
+    $(document).ready(function() {
+        $("img.lazy-notrigger").unveil(300);
+    });
+
+    // load all images 5s before first timer
+    setTimeout(function() {
+        if(useTimers) {
+            console.log("USING timer 1");
+            $("img.lazy-notrigger").trigger("unveil");
+        }
+    }, {{ timer1 - 5000 }});
+
+    setTimeout(function(){
+        if(useTimers){
+            $("#hidden1").slideDown(500);
+            var windowWidth = $(window).width();
+            if (windowWidth <= 767) {
+                $(".video").css("margin-bottom", "10px");
+            } else {
+                $(".video").css("margin-bottom", "20px");
+            }
+
+            setTimeout(function() {
+                $("#clickbank-disclaimer").slideDown(500);
+            }, 1000);
+        }
+    },{{ timer1 }});
+
+    {% if isMobile %}
+    // seeking event - if user seeek after 1st timer - show all content
+    $(document).ready(function(){
+        var searchInterval = setInterval(function(){
+            $(document).find("video").each(function(i,item){
+                if(item.id.search("wistia") != -1)
+                {
+                    item.onseeking = function() {
+                        if(item.currentTime * 1000 >= {{ timer1 }})
+                        {
+                            useTimers = false;
+
+                            $("#hidden1").slideDown(500);
+                            var windowWidth = $(window).width();
+                            if (windowWidth <= 767) {
+                                $(".video").css("margin-bottom", "10px");
+                            } else {
+                                $(".video").css("margin-bottom", "20px");
+                            }
+
+                            setTimeout(function() {
+                                $("#clickbank-disclaimer").slideDown(500);
+                            }, 1000);
+                        }
+                    };
+                    clearInterval(searchInterval);
+                }
+            });
+        },1000);
+    });
+    {% endif %}
+</script>
+<!-- SCRIPTS - Player END -->
+
+
+{% if pixelImg is defined %}
+    {{ pixelImg|raw }}
+{% endif %}
+
+<!-- Google Analytics code START -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-68358953-1', 'auto');
+    ga('require', 'displayfeatures');  // demographic features
+    ga('send', 'pageview');
+</script>
+<!-- Google Analytics code END -->
+
+<!-- Crazy Egg START -->
+<script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0018/9411.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!-- Crazy Egg END -->
+
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '186485591719503');
+    fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=186485591719503&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+
+{{ pixel|raw }}
+
+<!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+    var google_tag_params = {
+        dynx_itemid: 'REPLACE_WITH_VALUE',
+        dynx_itemid2: 'REPLACE_WITH_VALUE',
+        dynx_pagetype: 'REPLACE_WITH_VALUE',
+        dynx_totalvalue: 'REPLACE_WITH_VALUE',
+    };
+</script>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 928791961;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/928791961/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+</body>
+</html> 
