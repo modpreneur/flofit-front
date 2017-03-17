@@ -1,10 +1,10 @@
-FROM php:5.6-apache
+FROM php:7.1-apache
 
 MAINTAINER Luke Vlcek <vlcek@webvalley.cz>
 
 ADD docker/php.ini /usr/local/etc/php/
 ADD docker/000-default.conf /etc/apache2/sites-available/000-default.conf
-ADD . /var/app
+#ADD . /var/app
 
 WORKDIR /var/app
 
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get -y install \
 
     && docker-php-ext-install soap \
     && docker-php-ext-install curl json mbstring opcache pdo_mysql zip \
-    && yes '' | pecl install -o -f apcu-4.0.10 \
+    && yes '' | pecl install -o -f apcu-5.1.8 \
     && rm -rf /tmp/pear \
     && echo "extension=apcu.so" > /usr/local/etc/php/conf.d/apcu.ini \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \

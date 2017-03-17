@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    links:
+      - mysql:mysql
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    volumes:
+      - .:/var/app
+
+
+  mysql:
+    image: mysql/mysql-server
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw -d
+      - MYSQL_DATABASE=flofit_front
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
