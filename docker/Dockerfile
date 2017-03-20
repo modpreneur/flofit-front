@@ -4,7 +4,6 @@ MAINTAINER Luke Vlcek <vlcek@webvalley.cz>
 
 ADD docker/php.ini /usr/local/etc/php/
 ADD docker/000-default.conf /etc/apache2/sites-available/000-default.conf
-#ADD . /var/app
 
 WORKDIR /var/app
 
@@ -34,9 +33,8 @@ RUN apt-get update && apt-get -y install \
 
     && a2ensite 000-default.conf \
     && a2enmod expires \
-    && a2enmod rewrite \
-    && service apache2 restart
+    && a2enmod rewrite
 
-RUN chmod +x entrypoint.sh
+#RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["sh", "entrypoint.sh"]
+ENTRYPOINT ["sh", "docker/entrypoint.sh"]

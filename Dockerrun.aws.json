@@ -5,6 +5,12 @@
       "ContainerPort": "80"
     }
   ],
-  "Volumes": [],
+  "Volumes": [
+    {
+      "HostDirectory": "/var/app/current",
+      "ContainerDirectory": "/var/app"
+    }
+  ],
+  "entryPoint": ["sh", "./entrypoint.sh"],
   "Logging": "/var/log/apache2"
 }
