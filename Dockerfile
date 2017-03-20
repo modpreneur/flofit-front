@@ -37,4 +37,4 @@ RUN apt-get update && apt-get -y install \
 
 #RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["sh", "docker/entrypoint.sh"]
+ENTRYPOINT ["sh", "entrypoint.sh"]

@@ -11,6 +11,5 @@
       "ContainerDirectory": "/var/app"
     }
   ],
-  "entryPoint": ["sh", "./entrypoint.sh"],
   "Logging": "/var/log/apache2"
 }
