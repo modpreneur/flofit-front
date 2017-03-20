@@ -35,8 +35,8 @@ RUN apt-get update && apt-get -y install \
     && a2ensite 000-default.conf \
     && a2enmod expires \
     && a2enmod rewrite \
-    && service apache2 restart \
+    && service apache2 restart
 
-  RUN chmod +x entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["sh", "entrypoint.sh"]
