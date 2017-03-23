@@ -85,7 +85,7 @@
     <div class="container">
         <div class="row">
             <div class="span-medium-24 static">
-                <a href="http://my.flofit.com/" class="login-button">Log in</a>
+                <a href="http://{{ user_section_url_base }}/" class="login-button">Log in</a>
                 <p class="span-medium-7 margin-bottom-20 span-mini-24">
                     <img src="{{ asset("images/sales-page/flo-fit-logo.png") }}"
                          alt="FLO FIT"
@@ -773,12 +773,12 @@
                 <ul>
                     <li><a href="{{ digitalBuyLink }}">Start 7 day trial</a></li>
                     <li><a href="{{ path('affiliates') }}">Affiliates</a></li>
-                    <li><a href="http://my.flofit.com/terms-of-use" target="_blank">Terms of use</a></li>
-                    <li><a href="http://my.flofit.com/privacy-policy" target="_blank">Privacy policy</a></li>
+                    <li><a href="http://{{ user_section_url_base }}/terms-of-use" target="_blank">Terms of use</a></li>
+                    <li><a href="http://{{ user_section_url_base }}/privacy-policy" target="_blank">Privacy policy</a></li>
                     <li><label for="legal_disclaimer" class="label">Legal Disclaimer</label></li>
                     <li><label for="modal_faq" class="label">Help and FAQ</label></li>
                     <li><a href="{{ digphyBuyLink }}">Order DVDs</a></li>
-                    <li><a href="http://my.flofit.com/">Log In</a></li>
+                    <li><a href="http://{{ user_section_url_base }}/">Log In</a></li>
                     {#<li><a href="{{ path("learn_more") }}" target="_blank">Learn more</a></li>#}
                 </ul>
             </div>

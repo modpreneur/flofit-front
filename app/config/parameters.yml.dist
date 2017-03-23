@@ -23,3 +23,5 @@ parameters:
     node_paths: [/usr/local/lib/node_modules]
     clickbank_site: NO-SITE
     clickbank_api_auth: NO-API-KEY
+
+    user_section_url_base: my.flofit.com

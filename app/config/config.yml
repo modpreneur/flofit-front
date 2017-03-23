@@ -46,6 +46,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        user_section_url_base: "%user_section_url_base%"
 
 # Assetic Configuration
 assetic:

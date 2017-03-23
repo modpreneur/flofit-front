@@ -56,10 +56,10 @@
                                 <small>(no credit card required)</small>
                             </h2>
                             <div class="form">
-                                <a href="http://my.flofit.com/login/facebook" class="button-facebook" id="register-fb-lan"><i>f</i>Register with Facebook</a>
+                                <a href="http://{{ user_section_url_base }}/login/facebook" class="button-facebook" id="register-fb-lan"><i>f</i>Register with Facebook</a>
                                 <span class="or">or</span>
                                 <div class="button-email" id="button-email"><i>@</i>Enter your email to begin</div>
-                                <form action="http://my.flofit.com/signup/email" method="post" class="box" id="reg-form-lan">
+                                <form action="http://{{ user_section_url_base }}/signup/email" method="post" class="box" id="reg-form-lan">
                                     <a href="#" class="close"><span class="tiecons tiecons-cross-light"></span></a>
                                     <div class="abs-center">
                                         <div class="row">
@@ -134,8 +134,8 @@
                 <ul>
                     <li><a id="get_startedLink" href="#">Start your Free Trial</a></li>
                     <li><a href="{{ path('affiliates') }}">Affiliates</a></li>
-                    <li><a href="http://my.flofit.com/terms-of-use" target="_blank">Terms of use</a></li>
-                    <li><a href="http://my.flofit.com/privacy-policy" target="_blank">Privacy policy</a></li>
+                    <li><a href="http://{{ user_section_url_base }}/terms-of-use" target="_blank">Terms of use</a></li>
+                    <li><a href="http://{{ user_section_url_base }}/privacy-policy" target="_blank">Privacy policy</a></li>
                     <li><label for="legal_disclaimer" class="label">Legal Disclaimer</label></li>
                     <li><label for="modal_faq" class="label">Help and FAQ</label></li>
                     <li><a href="{{ digphyBuyLink }}" id="dvd-footer">Order DVDs</a></li>

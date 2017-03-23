@@ -853,7 +853,7 @@
     <div class="container">
         <div class="row">
             <div class="span-medium-24 padding-bottom-25">
-                {#<a href="http://my.flofit.com/faq" target="_blank" class="read-faq">Read the FLO FIT FAQ</a>#}
+                {#<a href="http://{{ user_section_url_base }}/faq" target="_blank" class="read-faq">Read the FLO FIT FAQ</a>#}
                 <label for="modal_faq" class="read-faq">Read the FLO FIT FAQ</label>
                 <p class="first">Consult your physician and follow all safety instructions before beginning any exercise program. <br/>All trademarks, products and service names are the property of their respective owners.</p>
                 <br>
@@ -872,8 +872,8 @@
                 <ul>
                     <li><a id="get_startedLink" href="#">Get Started</a></li>
                     <li><a href="{{ path('affiliates') }}">Affiliates</a></li>
-                    <li><a href="http://my.flofit.com/terms-of-use" target="_blank">Terms of use</a></li>
-                    <li><a href="http://my.flofit.com/privacy-policy" target="_blank">Privacy policy</a></li>
+                    <li><a href="http://{{ user_section_url_base }}/terms-of-use" target="_blank">Terms of use</a></li>
+                    <li><a href="http://{{ user_section_url_base }}/privacy-policy" target="_blank">Privacy policy</a></li>
                     <li><label for="legal_disclaimer" class="label">Legal Disclaimer</label></li>
                     <li><label for="modal_faq" class="label">Help and FAQ</label></li>
                     {#<li><a href="{{ path("learn_more") }}" target="_blank">Learn more</a></li>#}

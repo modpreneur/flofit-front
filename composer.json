@@ -74,7 +74,8 @@
                 "database_password": "SYMFONY__DATABASE_PASSWORD",
                 "clickbank_site": "SYMFONY_CLICKBANK_SITE",
                 "clickbank_api_auth": "SYMFONY_CLICKBANK_API_AUTH",
-                "secret": "SYMFONY__SECRET"
+                "secret": "SYMFONY__SECRET",
+                "user_section_url_base": "SYMFONY__USER_SECTION_URL_BASE"
             }
         }
     }
