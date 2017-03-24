@@ -12,7 +12,7 @@ namespace FloFitBundle\Entity;
 class OrderObject
 {
 
-    public $productId;
+    public $billingPlanId;
     public $amount;
 
     /**
@@ -20,9 +20,9 @@ class OrderObject
      *
      * @param $orderId
      */
-    public function __construct($productId, $amount)
+    public function __construct($billingPlanId, $amount)
     {
-        $this->productId = $productId;
+        $this->productId = $billingPlanId;
         $this->amount = $amount;
     }
 

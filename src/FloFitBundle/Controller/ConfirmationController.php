@@ -25,8 +25,10 @@ class ConfirmationController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 5;
+        $billingPlanId= 555;
         $vtidRemove = "";
         $vtidAppend = "pc";
         $priceOld = "$79";
@@ -65,8 +67,8 @@ class ConfirmationController extends Controller
         // append vtid at the end
         $vtid .= $vtidAppend;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'd');
 
         $response = null;
         $pixelView = is_null($request->cookies->get("pixel_view", null));
@@ -83,7 +85,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -101,8 +103,10 @@ class ConfirmationController extends Controller
      */
     public function dpAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 10;
+        $billingPlanId= 571;
         $vtidRemove = "";
         $vtidAppend = "pc";
         $priceOld = "$79";
@@ -139,8 +143,8 @@ class ConfirmationController extends Controller
         $useJW7 = $mobile && !$ie;
 
         $response = null;
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'd');
 
         return $this->render('FloFitBundle:Confirmation:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -148,7 +152,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -166,8 +170,10 @@ class ConfirmationController extends Controller
      */
     public function freeAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 5;
+        $billingPlanId= 555;
         $vtidRemove = "";
         $vtidAppend = "pc";
         $priceOld = "$79";
@@ -204,8 +210,8 @@ class ConfirmationController extends Controller
         // append vtid at the end
         $vtid .= $vtidAppend;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'd');
 
         $response = null;
         $pixelView = is_null($request->cookies->get("pixel_view", null));
@@ -222,7 +228,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -240,8 +246,10 @@ class ConfirmationController extends Controller
      */
     public function pifAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 32;
+        $billingPlanId= 597;
         $vtidRemove = "";
         $vtidAppend = "ld";
         $priceOld = "$67";
@@ -268,8 +276,8 @@ class ConfirmationController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         $initialPurchase = null;
         // if the parameter is set
@@ -307,7 +315,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -326,8 +334,10 @@ class ConfirmationController extends Controller
      */
     public function pif43Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 43;
+        $billingPlanId= 628;
         $vtidRemove = "";
         $vtidAppend = "ld";
         $priceOld = "$67";
@@ -354,8 +364,8 @@ class ConfirmationController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         $initialPurchase = null;
         // if the parameter is set
@@ -393,7 +403,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -412,8 +422,10 @@ class ConfirmationController extends Controller
      */
     public function pif44Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 44;
+        $billingPlanId= 629;
         $vtidRemove = "";
         $vtidAppend = "ld";
         $priceOld = "$67";
@@ -440,8 +452,8 @@ class ConfirmationController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         $initialPurchase = null;
         // if the parameter is set
@@ -479,7 +491,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -498,8 +510,10 @@ class ConfirmationController extends Controller
      */
     public function pifDPAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 38;
+        $billingPlanId= 616;
         $vtidRemove = "";
         $vtidAppend = "ld";
         $priceOld = "$67";
@@ -526,8 +540,8 @@ class ConfirmationController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         $initialPurchase = null;
         // if the parameter is set
@@ -565,7 +579,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -584,8 +598,10 @@ class ConfirmationController extends Controller
      */
     public function be5Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 5;
+        $billingPlanId= 555;
         $vtidRemove = "ld";
         $vtidAppend = "pc";
         $priceOld = "$79";
@@ -622,8 +638,8 @@ class ConfirmationController extends Controller
         // append vtid at the end
         $vtid .= $vtidAppend;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'd');
 
         return $this->render('FloFitBundle:PlatinumClub:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -631,7 +647,7 @@ class ConfirmationController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,

@@ -27,8 +27,10 @@ class FloFitController extends Controller
      */
     public function pifAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 32;
+        $billingPlanId= 597;
         $vtidRemove = "";
         $vtidAppend = "ld";
         $priceOld = "$67";
@@ -55,8 +57,8 @@ class FloFitController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         $initialPurchase = null;
         // if the parameter is set
@@ -84,7 +86,7 @@ class FloFitController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -103,8 +105,10 @@ class FloFitController extends Controller
      */
     public function pif43Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 43;
+        $billingPlanId= 628;
         $vtidRemove = "";
         $vtidAppend = "ld";
         $priceOld = "$67";
@@ -131,8 +135,8 @@ class FloFitController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         $previousProduct = null;
 
@@ -161,7 +165,7 @@ class FloFitController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => "67",
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -178,8 +182,10 @@ class FloFitController extends Controller
      */
     public function pifDPAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 38;
+        $billingPlanId= 616;
         $vtidRemove = "";
         $vtidAppend = "ld";
         $priceOld = "$67";
@@ -206,8 +212,8 @@ class FloFitController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         $previousProduct = null;
         try
@@ -226,7 +232,7 @@ class FloFitController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,

@@ -23,6 +23,8 @@ class AffiliateController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37.00";
         $oldPrice = "$74.99";
 
@@ -49,17 +51,17 @@ class AffiliateController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $dBuyLink = "http://33.flofit.pay.clickbank.net?cbfid=24663&vtid={$vtid}&cbskin=13935";
-        $pBuyLink = "http://34.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13935&cbfid=24805";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(598, 24663, $vtid, 13935);
+        $pBuyLink = $cbService->buyLink(599, 24805, $vtid, 13935);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render("FloFitBundle:Welcome:block-free-digital-both.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://7.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkFree" => "http://33.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkDigital" => "http://30.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkDigitalShipping" => "http://31.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkGetStarted" => "http://7.flofit.pay.clickbank.net?cbfid=21773&vtid=welnobumptest&cbskin=13358",
+            "link" => $cbService->buyLink(567, 21773, $vtid, 13358),
+            "linkFree" => $cbService->buyLink(598, 21773, $vtid, 13358),
+            "linkDigital" => $cbService->buyLink(595, 21773, $vtid, 13358),
+            "linkDigitalShipping" => $cbService->buyLink(596, 21773, $vtid, 13358),
+            "linkGetStarted" => $cbService->buyLink(567, 21773, 'welnobumptest', 13358),
             "digitalBuyLink" => $dBuyLink,
             "physicalBuyLink" => $pBuyLink,
             "digphyBuyLink" => $dpBuyLink,

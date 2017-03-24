@@ -28,7 +28,7 @@ services:
 
   clickbank_service:
     class: FloFitBundle\Services\ClickbankService
-    arguments: ["%clickbank_site%", "%clickbank_api_auth%"]
+    arguments: ["%clickbank_site%", "%clickbank_api_auth%", "%necktie_url%"]
 
   product_solver_service:
     class: FloFitBundle\Services\ProductSolverService

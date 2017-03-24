@@ -14,14 +14,16 @@ class ClickbankService
 {
     private $clickbankApiAuth;
     private $clickbankSite;
+    private $necktieUrl;
 
     /**
      * ClickbankService constructor.
      */
-    public function __construct($clickbankSite, $clickbankApiAuth)
+    public function __construct($clickbankSite, $clickbankApiAuth, $necktieUrl)
     {
         $this->clickbankSite = $clickbankSite;
         $this->clickbankApiAuth = $clickbankApiAuth;
+        $this->necktieUrl = $necktieUrl;
     }
 
     public function getProductInfo($cbId)
@@ -48,5 +50,34 @@ class ClickbankService
         curl_close($ch);
 
         return $result;
+    }
+
+    /**
+     * Return a buy link URL
+     *
+     * @param int $billingPlanId
+     * @param string $cbFid
+     * @param string $vtId
+     * @param int $cbSkin
+     *
+     * @param string $cbf
+     * @param string $cbur
+     *
+     * @return string
+     */
+    public function buyLink(
+        int $billingPlanId,
+        string $cbFid = null,
+        string $vtId = null,
+        int $cbSkin = null,
+        string $cbf = null,
+        string $cbur = null
+    ) {
+        return 'http://' . $this->necktieUrl . '/payment/click-bank/buy/billing/' . $billingPlanId.
+            ($cbFid!==null? '?cbfid='. $cbFid : '') .
+            ($vtId!==null? '&vtid=' . $vtId : '') .
+            ($cbSkin!==null? '&cbskin=' . $cbSkin : '') .
+            ($cbf!==null? '&cbf=' . $cbf : '') .
+            ($cbur!==null? '&cbur=' . $cbur : '');
     }
 }

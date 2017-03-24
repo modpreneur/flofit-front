@@ -25,6 +25,8 @@ class TestingController extends Controller
      */
     public function indexSalesPageLazy0Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $price = 37;
 
         $browser = $this->container->get("browser_detect_service");
@@ -44,9 +46,9 @@ class TestingController extends Controller
             $vtid = "mo" . $vtid;
         }
 
-        $dBuyLink = "http://23.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
-        $pBuyLink = "http://24.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13358";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(589, 21773, $vtid, 13358);
+        $pBuyLink = $cbService->buyLink(590, null, $vtid, 13358);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render('FloFitBundle:Testing:indexSalesPageLazy0.html.twig', array(
             "price" => $price,
@@ -69,6 +71,8 @@ class TestingController extends Controller
      */
     public function indexSalesPageLazy1Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $price = 37;
 
         $browser = $this->container->get("browser_detect_service");
@@ -88,9 +92,9 @@ class TestingController extends Controller
             $vtid = "mo" . $vtid;
         }
 
-        $dBuyLink = "http://23.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
-        $pBuyLink = "http://24.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13358";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(589, 21773, $vtid, 13358);
+        $pBuyLink = $cbService->buyLink(590, null, $vtid, 13358);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render('FloFitBundle:Testing:indexSalesPageLazy1.html.twig', array(
             "price" => $price,
@@ -113,6 +117,8 @@ class TestingController extends Controller
      */
     public function indexSalesPageLazy2Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $price = 37;
 
         $browser = $this->container->get("browser_detect_service");
@@ -132,9 +138,9 @@ class TestingController extends Controller
             $vtid = "mo" . $vtid;
         }
 
-        $dBuyLink = "http://23.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
-        $pBuyLink = "http://24.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13358";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(589, 21773, $vtid, 13358);
+        $pBuyLink = $cbService->buyLink(590, null, $vtid, 13358);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render('FloFitBundle:Testing:indexSalesPageLazy2.html.twig', array(
             "price" => $price,
@@ -157,6 +163,8 @@ class TestingController extends Controller
      */
     public function indexSalesPageLazy3Action(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $price = 37;
 
         $browser = $this->container->get("browser_detect_service");
@@ -176,9 +184,9 @@ class TestingController extends Controller
             $vtid = "mo" . $vtid;
         }
 
-        $dBuyLink = "http://23.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
-        $pBuyLink = "http://24.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13358";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(589, 21773, $vtid, 13358);
+        $pBuyLink = $cbService->buyLink(590, null, $vtid, 13358);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render('FloFitBundle:Testing:indexSalesPageLazy3.html.twig', array(
             "price" => $price,

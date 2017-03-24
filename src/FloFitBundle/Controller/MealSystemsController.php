@@ -23,8 +23,10 @@ class MealSystemsController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 3;
+        $billingPlanId= 550;
         $vtidRemove = "pm";
         $vtidAppend = "ms";
         $priceOld = "$57";
@@ -51,8 +53,8 @@ class MealSystemsController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         return $this->render('FloFitBundle:MealSystems:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -60,7 +62,7 @@ class MealSystemsController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -76,8 +78,10 @@ class MealSystemsController extends Controller
      */
     public function dpAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 12;
+        $billingPlanId= 573;
         $vtidRemove = "pm";
         $vtidAppend = "ms";
         $priceOld = "$57";
@@ -104,8 +108,8 @@ class MealSystemsController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         return $this->render('FloFitBundle:MealSystems:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -113,7 +117,7 @@ class MealSystemsController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,

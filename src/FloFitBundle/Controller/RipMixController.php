@@ -23,8 +23,10 @@ class RipMixController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 4;
+        $billingPlanId= 552;
         $vtidRemove = "ms";
         $vtidRemove2 = "pm";
         $vtidAppend = "rm";
@@ -52,8 +54,8 @@ class RipMixController extends Controller
         // append vtid at the end
         $vtid .= $vtidAppend;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         return $this->render('FloFitBundle:RipMix:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -61,7 +63,7 @@ class RipMixController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -77,8 +79,10 @@ class RipMixController extends Controller
      */
     public function dpAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 13;
+        $billingPlanId= 574;
         $vtidRemove = "ms";
         $vtidAppend = "rm";
         $priceOld = "$39.95";
@@ -105,8 +109,8 @@ class RipMixController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         return $this->render('FloFitBundle:RipMix:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -114,7 +118,7 @@ class RipMixController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,

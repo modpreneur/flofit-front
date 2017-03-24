@@ -1,12 +1,9 @@
-# This file is a "template" of what your parameters.yml file should look like
-# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
-# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
-    database_host:     127.0.0.1
-    database_port:     ~
+    database_host:     mysql
+    database_port:     3306
     database_name:     flofit_front
-    database_user:     root
-    database_password: ~
+    database_user:     user
+    database_password: pass
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 
@@ -24,4 +21,10 @@ parameters:
     clickbank_site: NO-SITE
     clickbank_api_auth: NO-API-KEY
 
-    user_section_url_base: my.flofit.com
+    necktie_url: localhost
+    user_section_url_base: localhost:8888
+
+    amazon_s3_bucket:   test-modpreneur
+    amazon_s3_key:      AKIAJH3FKN6SGDGI6JKA
+    amazon_s3_secret:   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
+    amazon_s3_region:   us-west-2

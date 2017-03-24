@@ -23,9 +23,11 @@ class LearnMoreController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37";
         $oldPrice = "$79";
-        $link = "http://7.flofit.pay.clickbank.net?cbfid=21773&vtid=learnmore&cbskin=13358";
+        $link = $cbService->buyLink(567, 21773, 'learnmore', 13358);
 
         $videoSource = "https://player.vimeo.com/external/149957289.hd.mp4?s=4bbb74429080d458c96df4711a0113056faf8470&profile_id=113";
 
@@ -36,9 +38,9 @@ class LearnMoreController extends Controller
         if($browser->isMobile() || $browser->isTablet())
             $vtid = "mo".$vtid;
 
-        $dBuyLink = "http://33.flofit.pay.clickbank.net?cbfid=24663&vtid={$vtid}&cbskin=13935";
-        $pBuyLink = "http://34.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13935&cbfid=24805";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(598, 24663, $vtid, 13935);
+        $pBuyLink = $cbService->buyLink(599, 24805, $vtid, 13935);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render("FloFitBundle:LearnMore:new2.html.twig", array(
             "videoSource" => $videoSource,
@@ -58,9 +60,11 @@ class LearnMoreController extends Controller
      */
     public function dpAction()
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37";
         $oldPrice = "$79";
-        $link = "http://9.flofit.pay.clickbank.net?cbfid=22868&vtid=learnmoredp&cbskin=13358";
+        $link = $cbService->buyLink(570, 22868, 'learnmoredp', 13358);
 
         return $this->render('FloFitBundle:LearnMore:general.html.twig', array(
             "newPrice" => $newPrice,
@@ -76,9 +80,11 @@ class LearnMoreController extends Controller
       */
      public function new2Action(Request $request)
      {
+         $cbService = $this->get('clickbank_service');
+
          $newPrice = "$37";
          $oldPrice = "$79";
-         $link = "http://7.flofit.pay.clickbank.net?cbfid=21773&vtid=learnmore&cbskin=13358";
+         $link = $cbService->buyLink(567, 21773, 'learnmore', 13358);
 
          $videoSource = "https://player.vimeo.com/external/149957289.hd.mp4?s=4bbb74429080d458c96df4711a0113056faf8470&profile_id=113";
 

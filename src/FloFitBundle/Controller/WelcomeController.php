@@ -23,6 +23,8 @@ class WelcomeController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37.00";
         $oldPrice = "$74.99";
 
@@ -50,9 +52,9 @@ class WelcomeController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $dBuyLink = "http://33.flofit.pay.clickbank.net?cbfid=26408&vtid={$vtid}&cbskin=13935";
-        $pBuyLink = "http://34.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13358&cbfid=26406";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=26406&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(598, 26408, $vtid, 13935);
+        $pBuyLink = $cbService->buyLink(599, 26406, $vtid, 13358);
+        $dpBuyLink = $cbService->buyLink(591, 26406, $vtid, 13358);
 
         return $this->render("FloFitBundle:Welcome:block-free-digital-both.html.twig", array(
             "videoSource" => $videoSource,
@@ -81,6 +83,8 @@ class WelcomeController extends Controller
      */
     public function vlAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         return $this->redirectToRoute('welcome');
 
         $newPrice = "$37.00";
@@ -110,17 +114,17 @@ class WelcomeController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $dBuyLink = "http://33.flofit.pay.clickbank.net?cbfid=24663&vtid={$vtid}&cbskin=13935";
-        $pBuyLink = "http://34.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13935&cbfid=24805";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(598, 24663, $vtid, 13935);
+        $pBuyLink = $cbService->buyLink(599, 24805, $vtid, 13935);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render("FloFitBundle:Welcome:vl-block-free-digital-both.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://7.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkFree" => "http://33.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkDigital" => "http://30.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkDigitalShipping" => "http://31.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkGetStarted" => "http://7.flofit.pay.clickbank.net?cbfid=21773&vtid=welnobumptest&cbskin=13358",
+            "link" => $cbService->buyLink(567, 21773, $vtid, 13358),
+            "linkFree" => $cbService->buyLink(598, 21773, $vtid, 13358),
+            "linkDigital" => $cbService->buyLink(595, 21773, $vtid, 13358),
+            "linkDigitalShipping" => $cbService->buyLink(596, 21773, $vtid, 13358),
+            "linkGetStarted" => $cbService->buyLink(567, 21773, 'welnobumptest', 13358),
             "digitalBuyLink" => $dBuyLink,
             "physicalBuyLink" => $pBuyLink,
             "digphyBuyLink" => $dpBuyLink,
@@ -145,6 +149,9 @@ class WelcomeController extends Controller
      */
     public function blockAction(Request $request)
     {
+        /** @var ClickbankService $cbService */
+        $cbService = $this->get('clickbank_service');
+
         return $this->redirectToRoute('welcome');
 
         $newPrice = "$37.00";
@@ -168,9 +175,9 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:block.html.twig", array(
             "videoSource" => $videoSource,
-            "linkDigital" => "http://30.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkDigitalShipping" => "http://31.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkGetStarted" => "http://7.flofit.pay.clickbank.net?cbfid=21773&vtid=welnobumptest&cbskin=13358",
+            "linkDigital" => $cbService->buyLink(595, 21773, $vtid, 13358),
+            "linkDigitalShipping" => $cbService->buyLink(596, 21773, $vtid, 13358),
+            "linkGetStarted" => $cbService->buyLink(567, 21773, 'welnobumptest', 13358),
 //            "timer1" => (22 * 60 + 55) * 1000, // 22:55
             "timer1" => 0,
             "newPrice" => $newPrice,
@@ -190,6 +197,8 @@ class WelcomeController extends Controller
      */
     public function indexVideoAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         return $this->redirectToRoute('welcome');
 
         $newPrice = "$37.00";
@@ -214,7 +223,7 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:general.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://16.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
+            "link" => $cbService->buyLink(584, 21773, $vtid, 13358),
             "timer1" => (22 * 60 + 55) * 1000, // 22:55
 //            "timer1" => 5000,
             "newPrice" => $newPrice,
@@ -236,6 +245,8 @@ class WelcomeController extends Controller
      */
     public function dpAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37.00";
         $oldPrice = "$74.99";
 
@@ -260,9 +271,9 @@ class WelcomeController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $dBuyLink = "http://33.flofit.pay.clickbank.net?cbfid=26485&vtid={$vtid}&cbskin=13935"; // FREE TRIAL - 7 day free, $4.95 monthly
-        $pBuyLink = "http://34.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13358&cbfid=26407"; // $37
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=26407&vtid={$vtid}&cbskin=13358"; // $67
+        $dBuyLink = $cbService->buyLink(598, 26485, $vtid, 13935); // FREE TRIAL - 7 day free, $4.95 monthly
+        $pBuyLink = $cbService->buyLink(599, 26407, $vtid, 13358); // $37
+        $dpBuyLink = $cbService->buyLink(591, 26407, $vtid, 13358); // $67
 
         return $this->render("FloFitBundle:Welcome:block-free-digital-both.html.twig", array(
             "videoSource" => $videoSource,
@@ -290,6 +301,8 @@ class WelcomeController extends Controller
      */
     public function dpblockAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         return $this->redirectToRoute('welcome_dp');
 
         $newPrice = "$37.00";
@@ -319,9 +332,9 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:block.html.twig", array(
             "videoSource" => $videoSource,
-            "linkDigital" => "http://30.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkDigitalShipping" => "http://31.flofit.pay.clickbank.net/?cbfid=21773&vtid=".$vtid."&cbskin=13358",
-            "linkGetStarted" => "http://9.flofit.pay.clickbank.net?cbfid=22868&vtid=".$vtid."&cbskin=13358",
+            "linkDigital" => $cbService->buyLink(595, 21773, $vtid, 13358),
+            "linkDigitalShipping" => $cbService->buyLink(596, 21773, $vtid, 13358),
+            "linkGetStarted" => $cbService->buyLink(570, 22868, $vtid, 13358),
 //            "timer1" => (22 * 60 + 55) * 1000, // 22:55
             "timer1" => 0,
             "newPrice" => $newPrice,
@@ -343,6 +356,8 @@ class WelcomeController extends Controller
      */
     public function dpVideoAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         return $this->redirectToRoute('welcome_dp');
 
         $newPrice = "$37.00";
@@ -371,7 +386,7 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:general.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://19.flofit.pay.clickbank.net?cbfid=22868&vtid=".$vtid."&cbskin=13358",
+            "link" => $cbService->buyLink(585, 22868, $vtid, 13358),
             "pixelImg" => $pixel,
             "timer1" => (22 * 60 + 55) * 1000, // 22:55
 //            "timer1" => 5000,
@@ -392,6 +407,8 @@ class WelcomeController extends Controller
      */
     public function newProductAAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37.00";
         $oldPrice = "$74.99";
 
@@ -413,7 +430,7 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:product.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://17.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
+            "link" => $cbService->buyLink(581, 21773, $vtid, 13358),
             "timer1" => (22 * 60 + 55) * 1000, // 22:55
 //            "timer1" => 5000,
             "newPrice" => $newPrice,
@@ -432,6 +449,8 @@ class WelcomeController extends Controller
      */
     public function newProductBAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37.00";
         $oldPrice = "$74.99";
 
@@ -453,7 +472,7 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:product.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://18.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
+            "link" => $cbService->buyLink(582, 21773, $vtid, 13358),
             "timer1" => (22 * 60 + 55) * 1000, // 22:55
 //            "timer1" => 5000,
             "newPrice" => $newPrice,
@@ -472,6 +491,8 @@ class WelcomeController extends Controller
      */
     public function indexFBAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37.00";
         $oldPrice = "$74.99";
 
@@ -496,7 +517,7 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:fb.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://22.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
+            "link" => $cbService->buyLink(587, 21773, $vtid, 13358),
             "timer1" => (22 * 60 + 55) * 1000, // 22:55
 //            "timer1" => 5000,
             "newPrice" => $newPrice,
@@ -517,6 +538,8 @@ class WelcomeController extends Controller
      */
     public function indexFBVideoAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $newPrice = "$37.00";
         $oldPrice = "$74.99";
 
@@ -541,7 +564,7 @@ class WelcomeController extends Controller
 
         return $this->render("FloFitBundle:Welcome:fb.html.twig", array(
             "videoSource" => $videoSource,
-            "link" => "http://21.flofit.pay.clickbank.net?cbfid=21773&vtid=".$vtid."&cbskin=13358",
+            "link" => $cbService->buyLink(586, 21773, $vtid, 13358),
             "timer1" => (22 * 60 + 55) * 1000, // 22:55
 //            "timer1" => 5000,
             "newPrice" => $newPrice,

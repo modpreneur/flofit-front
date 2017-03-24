@@ -23,8 +23,10 @@ class PlatinumMixController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 2;
+        $billingPlanId= 548;
         $vtidRemove = "pc";
         $vtidAppend = "pm";
         $priceOld = "$79";
@@ -51,8 +53,8 @@ class PlatinumMixController extends Controller
         $mobile = $browser->isMobile() || $browser->isTablet();
         $useJW7 = $mobile && !$ie;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         return $this->render('FloFitBundle:PlatinumMix:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -60,7 +62,7 @@ class PlatinumMixController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -76,8 +78,10 @@ class PlatinumMixController extends Controller
      */
     public function dpAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 11;
+        $billingPlanId= 572;
         $vtidRemove = "pc";
         $vtidAppend = "pm";
         $priceOld = "$79";
@@ -104,8 +108,8 @@ class PlatinumMixController extends Controller
         // append vtid at the end
         $vtid .= $vtidAppend;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}&cbskin=13358";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}&cbskin=13358";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, $vtid, 13358, $cbf, 'd');
 
         return $this->render('FloFitBundle:PlatinumMix:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -113,7 +117,7 @@ class PlatinumMixController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,

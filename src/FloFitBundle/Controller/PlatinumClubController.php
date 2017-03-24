@@ -24,8 +24,10 @@ class PlatinumClubController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 5;
+        $billingPlanId= 555;
         $vtidRemove = "ld";
         $vtidAppend = "pc";
         $priceOld = "$79";
@@ -62,8 +64,8 @@ class PlatinumClubController extends Controller
         // append vtid at the end
         $vtid .= $vtidAppend;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'd');
 
         return $this->render('FloFitBundle:PlatinumClub:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -71,7 +73,7 @@ class PlatinumClubController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,
@@ -89,8 +91,10 @@ class PlatinumClubController extends Controller
      */
     public function dpAction(Request $request)
     {
+        $cbService = $this->get('clickbank_service');
+
         $vtid = $request->get("vtid");
-        $productId = 10;
+        $billingPlanId= 571;
         $vtidRemove = "ld";
         $vtidAppend = "pc";
         $priceOld = "$79";
@@ -127,8 +131,8 @@ class PlatinumClubController extends Controller
         // append vtid at the end
         $vtid .= $vtidAppend;
 
-        $linkAccept = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=a&vtid={$vtid}";
-        $linkDecline = "http://{$productId}.flofit.pay.clickbank.net?cbf={$cbf}&cbur=d&vtid={$vtid}";
+        $linkAccept = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'a');
+        $linkDecline = $cbService->buyLink($billingPlanId, null, null, null, $cbf, 'd');
 
         return $this->render('FloFitBundle:PlatinumClub:index.html.twig', array(
             "linkAccept" => $linkAccept,
@@ -136,7 +140,7 @@ class PlatinumClubController extends Controller
             "priceOld" => $priceOld,
             "priceNew" => $priceNew,
             "price" => $price,
-            "productId" => $productId,
+            "productId" => $billingPlanId,
             "cbf" => $cbf,
             "videoSource" => $videoSource,
             "productName" => $productName,

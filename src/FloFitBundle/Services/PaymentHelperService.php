@@ -73,10 +73,10 @@ class PaymentHelperService
         return $this->container->get("request");
     }
 
-    public function findProductById($productId)
+    public function findProductById($billingPlanId)
     {
         return $this->container->get("doctrine")->getManager()->getRepository("FloFitBundle:Product")
-            ->find($productId);
+            ->find($billingPlanId);
     }
 
     public function makeRequestParameters(RequestParameters $params, $parameter = self::PARAMS_KEY)

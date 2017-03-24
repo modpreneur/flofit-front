@@ -29,7 +29,9 @@ class OldCompatibilityController extends Controller
      */
     public function homepageDigitalAndPhysicalAction(Request $request)
     {
-       $price = 37;
+        $cbService = $this->get('clickbank_service');
+
+        $price = 37;
 
         $browser = $this->container->get("browser_detect_service");
         $tablet = $browser->isTablet();
@@ -48,9 +50,9 @@ class OldCompatibilityController extends Controller
             $vtid = "mo" . $vtid;
         }
 
-        $dBuyLink = "http://23.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
-        $pBuyLink = "http://24.flofit.pay.clickbank.net?vtid={$vtid}&cbskin=13358";
-        $dpBuyLink = "http://25.flofit.pay.clickbank.net?cbfid=21773&vtid={$vtid}&cbskin=13358";
+        $dBuyLink = $cbService->buyLink(589, 21773, $vtid, 13358);
+        $pBuyLink = $cbService->buyLink(590, null, $vtid, 13358);
+        $dpBuyLink = $cbService->buyLink(591, 21773, $vtid, 13358);
 
         return $this->render('FloFitBundle:Old:homepage3products.html.twig', array(
             "price" => $price,
