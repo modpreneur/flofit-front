@@ -79,6 +79,6 @@ class ClickbankService
             ($cbSkin!==null? '&cbskin=' . $cbSkin : '') .
             ($cbf!==null? '&cbf=' . $cbf : '') .
             ($cbur!==null? '&cbur=' . $cbur : '') .
-            '&client=1';
+            '&project=1';
     }
 }
