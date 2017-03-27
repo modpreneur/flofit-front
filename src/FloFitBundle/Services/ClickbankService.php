@@ -78,6 +78,7 @@ class ClickbankService
             ($vtId!==null? '&vtid=' . $vtId : '') .
             ($cbSkin!==null? '&cbskin=' . $cbSkin : '') .
             ($cbf!==null? '&cbf=' . $cbf : '') .
-            ($cbur!==null? '&cbur=' . $cbur : '');
+            ($cbur!==null? '&cbur=' . $cbur : '') .
+            '&client=1';
     }
 }
