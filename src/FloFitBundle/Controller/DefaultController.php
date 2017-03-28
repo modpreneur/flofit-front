@@ -159,8 +159,8 @@ class DefaultController extends Controller
         }
 
         $dBuyLink = $cbService->buyLink(624, 26600, $vtid, 13935); // FREE TRIAL - 7 day free, $8.95 monthly
-        $pBuyLink = $cbService->$cbService->buyLink(626, 26406, $pvtid, 13358); // $67    ///-$99-
-        $dpBuyLink = $cbService->$cbService->buyLink(588, 26406, $dpvtid, 13358); // 97 - AM PRODUCT - 45 ///-$199-
+        $pBuyLink = $cbService->buyLink(626, 26406, $pvtid, 13358); // $67    ///-$99-
+        $dpBuyLink = $cbService->buyLink(588, 26406, $dpvtid, 13358); // 97 - AM PRODUCT - 45 ///-$199-
 
         return $this->render('FloFitBundle:Default:indexSalesPagehp1.html.twig', array(
             "price" => $price,
@@ -710,7 +710,7 @@ class DefaultController extends Controller
         }
 
         $pBuyLink = $cbService->buyLink(599, 26406, $vtid, 13358); // $37
-        $dpBuyLink = $cbService->$cbService->buyLink(588, 26406, $vtid, 13358); // $67
+        $dpBuyLink = $cbService->buyLink(588, 26406, $vtid, 13358); // $67
 
         $cookie = new Cookie("offerId", "introFree", 0, "/", ".flofit.com");
 
@@ -760,7 +760,7 @@ class DefaultController extends Controller
         }
 
         $pBuyLink = $cbService->buyLink(599, 26406, $vtid, 13358); // $37
-        $dpBuyLink = $cbService->$cbService->buyLink(588, 26406, $vtid, 13358); // $67
+        $dpBuyLink = $cbService->buyLink(588, 26406, $vtid, 13358); // $67
 
         $cookie = new Cookie("offerId", "introFreePa", 0, "/", ".flofit.com");
 
@@ -813,7 +813,7 @@ class DefaultController extends Controller
             $vtid = "mo" . $vtid;
         }
 
-        $dpBuyLink = $cbService->$cbService->buyLink(601, 26406, $vtid, 13358); // $67
+        $dpBuyLink = $cbService->buyLink(601, 26406, $vtid, 13358); // $67
 
         $cookie = new Cookie("offerId", "introFreeHp", 0, "/", ".flofit.com");
 
